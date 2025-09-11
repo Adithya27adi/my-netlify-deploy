@@ -2,86 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documents for {{ record.name }}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Document Processing</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
-        .container { max-width: 800px; padding: 40px; background: rgba(255, 255, 255, 0.95); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        .header { margin-bottom: 20px; }
-        .header h1 { color: #333; margin-bottom: 10px; font-size: 2.5em; }
-        .header p { color: #666; font-size: 1.1em; margin: 5px 0; }
-        .processing-message { display: none; } /* Initially hidden */
-        .processing-message.active { display: block; }
-        .message-icon { color: #5a67d8; font-size: 4em; margin-bottom: 20px; }
-        .message-title { font-size: 1.8em; font-weight: bold; color: #333; }
-        .message-text { font-size: 1.1em; color: #666; margin-top: 15px; }
-        .back-button { display: inline-block; margin-top: 25px; padding: 12px 25px; border-radius: 50px; background: #667eea; color: white; text-decoration: none; font-weight: bold; transition: background 0.3s ease; }
-        .back-button:hover { background: #5a67d8; }
-
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px; }
-        .doc-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: transform 0.3s ease; }
-        .doc-card:hover { transform: translateY(-5px); }
-        .doc-image { width: 100%; height: 250px; object-fit: cover; border-bottom: 1px solid #eee; }
-        .doc-info { padding: 20px; text-align: center; }
-        .doc-info h3 { margin: 0 0 15px 0; color: #333; font-size: 1.2em; }
-        .btn-group { display: flex; gap: 10px; justify-content: center; }
-        .btn { padding: 10px 20px; text-decoration: none; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; }
-        .btn-view { background: #667eea; color: white; }
-        .btn-view:hover { background: #5a67d8; }
-        .btn-download { background: #48bb78; color: white; }
-        .btn-download:hover { background: #38a169; }
-        .no-docs { text-align: center; padding: 50px; background: rgba(255,255,255,0.9); border-radius: 15px; }
-        .footer { text-align: center; margin-top: 40px; color: rgba(255,255,255,0.8); }
-        .pdf-placeholder { width: 100%; height: 250px; display: flex; align-items: center; justify-content: center; background: #f0f0f0; border-bottom: 1px solid #eee; }
-        .pdf-icon { font-size: 5em; color: #e74c3c; }
+        body {
+            background: #f8f9fb;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .box {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 24px rgba(60,72,88, 0.15);
+            max-width: 400px;
+            width: 94%;
+            padding: 35px 30px 30px 30px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+        .status-icon {
+            font-size: 38px;
+            color: #739aff;
+            margin-bottom: 12px;
+        }
+        h2 {
+            color: #394867;
+            margin-bottom: 12px;
+            font-size: 1.4em;
+        }
+        p {
+            color: #607080;
+            font-size: 1em;
+            margin-top: 0;
+            margin-bottom: 22px;
+        }
+        .note {
+            display: inline-block;
+            font-size: 13px;
+            color: #909aa8;
+            background: #f1f6fa;
+            border-radius: 6px;
+            padding: 7px 13px;
+            margin-bottom: 20px;
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 12px;
+            text-decoration: none;
+            background: #739aff;
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 22px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        a.button:hover {
+            background: #446dcc;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        {% if record.cloudinary_urls %}
-            <div class="header">
-                <h1>📄 Documents for {{ record.name }}</h1>
-                <p><strong>📞 Contact:</strong> {{ record.contact_no }}</p>
-                <p><strong>🏷️ Type:</strong> {{ record.get_record_type_display }}</p>
-                <p><strong>📅 Created:</strong> {{ record.created_at|date:"F d, Y" }}</p>
-            </div>
-            
-            <div class="gallery">
-                {% for url in record.cloudinary_urls %}
-                <div class="doc-card">
-                    {% if url|lower|slice:"-4:" == ".pdf" %}
-                        <div class="pdf-placeholder">
-                            <i class="fas fa-file-pdf pdf-icon"></i>
-                        </div>
-                    {% else %}
-                        <img src="{{ url }}" alt="Document {{ forloop.counter }}" class="doc-image" loading="lazy">
-                    {% endif %}
-                    <div class="doc-info">
-                        <h3>Document {{ forloop.counter }}</h3>
-                        <div class="btn-group">
-                            <a href="{{ url }}" class="btn btn-view" target="_blank">👁️ View</a>
-                            <a href="{{ url }}?fl_attachment" class="btn btn-download" target="_blank">⬇️ Download</a>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-            <div class="footer">
-                <p>Generated by RTO Management System | Secure Document Storage</p>
-            </div>
-        {% else %}
-            <div class="processing-message active">
-                <div class="message-icon"><i class="fas fa-spinner fa-spin"></i></div>
-                <div class="message-title">Document Processing in Progress</div>
-                <div class="message-text">
-                    Your documents are being securely processed and stored on our servers. This may take a few moments.
-                    <br>
-                    Please try again in a few minutes.
-                </div>
-                <a href="{% url 'core:dashboard' %}" class="back-button">Go Back to Dashboard</a>
-            </div>
-        {% endif %}
+    <div class="box">
+        <div class="status-icon">⏳</div>
+        <h2>Your documents are being processed</h2>
+        <div class="note">
+            Please wait a moment while we securely process and store your documents.
+        </div>
+        <p>
+            This process may take a few minutes depending on server load. You will be able to access your QR code and document gallery shortly.
+        </p>
+        
     </div>
 </body>
 </html>
