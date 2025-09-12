@@ -1,0 +1,282 @@
+{% extends 'base.html' %}
+
+{% block title %}Select Service - RTO Manager{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Header Section -->
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold mb-3">Choose Your Service</h1>
+        <p class="lead text-muted">Select the perfect option for your <span class="text-primary fw-semibold" id="record-type-display">{{ record_type|title }}</span> documents</p>
+        <div class="mx-auto" style="width: 80px; height: 4px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 2px;"></div>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="row justify-content-center g-4">
+        <!-- QR Code Card -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm border-0 pricing-card" style="transition: all 0.3s ease;">
+                <div class="card-header bg-light text-center py-4 border-0">
+                    <div class="pricing-icon mb-3">
+                        <i class="fas fa-qrcode fa-3x text-primary"></i>
+                    </div>
+                    <h3 class="h4 fw-bold mb-1">Digital QR Code</h3>
+                    <p class="text-muted small mb-0">Instant digital access</p>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <div class="text-center mb-4">
+                        <div class="price-tag">
+                            <span class="h2 fw-bold text-dark">₹2</span>
+                            <span class="text-muted">/document</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="list-unstyled mb-4 flex-grow-1">
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Instant QR code generation</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Digital document access</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Mobile-friendly viewing</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Shareable link</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Lifetime validity</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="btn btn-outline-primary btn-lg w-100 service-btn" 
+                            data-service="qr" data-price="2" data-delivery="digital">
+                        <i class="fas fa-rocket me-2"></i>Get QR Code
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PVC Card -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-lg border-0 pricing-card popular-card" style="transition: all 0.3s ease; transform: scale(1.05);">
+                <div class="popular-badge">
+                    <span class="badge bg-warning text-dark">Most Popular</span>
+                </div>
+                <div class="card-header text-center py-4 border-0" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <div class="pricing-icon mb-3">
+                        <i class="fas fa-credit-card fa-3x text-white"></i>
+                    </div>
+                    <h3 class="h4 fw-bold mb-1">PVC Smart Card</h3>
+                    <p class="opacity-75 small mb-0">Physical card + QR code</p>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <div class="text-center mb-4">
+                        <div class="price-tag">
+                            <span class="h2 fw-bold text-dark">₹100</span>
+                            <span class="text-muted">/card</span>
+                        </div>
+                        <span class="badge bg-success text-white mt-2">
+                            <i class="fas fa-truck me-1"></i>Free Doorstep Delivery
+                        </span>
+                    </div>
+                    
+                    <ul class="list-unstyled mb-4 flex-grow-1">
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Everything in QR Code</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Premium PVC material</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Water & scratch resistant</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Professional design</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>7-10 days delivery</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="btn btn-primary btn-lg w-100 service-btn" 
+                            data-service="pvc" data-price="100" data-delivery="doorstep">
+                        <i class="fas fa-credit-card me-2"></i>Order PVC Card
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- NFC Card -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm border-0 pricing-card" style="transition: all 0.3s ease;">
+                <div class="card-header bg-dark text-white text-center py-4 border-0">
+                    <div class="pricing-icon mb-3">
+                        <i class="fas fa-wifi fa-3x text-warning"></i>
+                    </div>
+                    <h3 class="h4 fw-bold mb-1">NFC Smart Card</h3>
+                    <p class="opacity-75 small mb-0">Tap to view technology</p>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <div class="text-center mb-4">
+                        <div class="price-tag">
+                            <span class="h2 fw-bold text-dark">₹400</span>
+                            <span class="text-muted">/card</span>
+                        </div>
+                        <span class="badge bg-success text-white mt-2">
+                            <i class="fas fa-truck me-1"></i>Free Doorstep Delivery
+                        </span>
+                    </div>
+                    
+                    <ul class="list-unstyled mb-4 flex-grow-1">
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Everything in PVC Card</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>NFC tap-to-view technology</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Works with any smartphone</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Premium metallic finish</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>3-5 days express delivery</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="btn btn-dark btn-lg w-100 service-btn" 
+                            data-service="nfc" data-price="400" data-delivery="doorstep">
+                        <i class="fas fa-wifi me-2"></i>Order NFC Card
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row mt-5 pt-5">
+        <div class="col-12 text-center mb-4">
+            <h2 class="h3 fw-bold">Why Choose Our Digital Document Service?</h2>
+        </div>
+        <div class="col-md-4 text-center mb-4">
+            <div class="feature-icon mb-3">
+                <i class="fas fa-shield-alt fa-2x text-primary"></i>
+            </div>
+            <h5 class="fw-semibold">100% Secure</h5>
+            <p class="text-muted">Your documents are encrypted and stored securely</p>
+        </div>
+        <div class="col-md-4 text-center mb-4">
+            <div class="feature-icon mb-3">
+                <i class="fas fa-clock fa-2x text-primary"></i>
+            </div>
+            <h5 class="fw-semibold">Instant Access</h5>
+            <p class="text-muted">Generate and access your documents anytime, anywhere</p>
+        </div>
+        <div class="col-md-4 text-center mb-4">
+            <div class="feature-icon mb-3">
+                <i class="fas fa-mobile-alt fa-2x text-primary"></i>
+            </div>
+            <h5 class="fw-semibold">Mobile Friendly</h5>
+            <p class="text-muted">Works perfectly on all devices and platforms</p>
+        </div>
+    </div>
+</div>
+
+<!-- Custom CSS -->
+<style>
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+}
+
+.popular-card {
+    position: relative;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.price-tag {
+    padding: 20px 0;
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.service-btn:hover {
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .popular-card {
+        transform: none !important;
+    }
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get record type from URL or storage
+    const urlParams = new URLSearchParams(window.location.search);
+    const recordType = urlParams.get('type') || 'RTO';
+    
+    // Update the record type display
+    const recordTypeDisplay = document.getElementById('record-type-display');
+    if (recordTypeDisplay) {
+        recordTypeDisplay.textContent = recordType.toUpperCase();
+    }
+    
+    // Handle service selection
+    document.querySelectorAll('.service-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const service = this.getAttribute('data-service');
+            const price = this.getAttribute('data-price');
+            const delivery = this.getAttribute('data-delivery');
+            
+            // Store service details
+            sessionStorage.setItem('selectedService', JSON.stringify({
+                type: service,
+                price: price,
+                delivery: delivery,
+                recordType: recordType
+            }));
+            
+            // Redirect to create record page
+            window.location.href = `{% url 'core:create_record' 'rto' %}?service=${service}&price=${price}&type=${recordType}`;
+        });
+    });
+});
+</script>
+{% endblock %}

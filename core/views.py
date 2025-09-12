@@ -20,17 +20,107 @@ from django.template.loader import render_to_string
 from .models import RTORecord, Order
 from .forms import RTORecordForm, SchoolRecordForm, OrderForm
 
+# Initialize Razorpay client
+client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
+
+@csrf_exempt
+@require_POST
+def ajax_create_record(request):
+    try:
+        data = json.loads(request.body)
+        
+        # Get service type and amount from frontend
+        service_type = data.get('service_type', 'qr')
+        amount = data.get('amount', 2)
+        
+        # Validate amount based on service type
+        service_prices = {
+            'qr': 2,
+            'pvc': 100, 
+            'nfc': 400
+        }
+        
+        expected_amount = service_prices.get(service_type, 2)
+        if amount != expected_amount:
+            return JsonResponse({
+                'error': f'Invalid amount for service {service_type}. Expected ₹{expected_amount}'
+            }, status=400)
+
+        name = data.get("name")
+        contact_no = data.get("contact_no")
+        address = data.get("address")
+        record_type = data.get("record_type")
+        cloudinary_urls = data.get("uploaded_documents", [])
+
+        if not all([name, contact_no, address, record_type]) or not cloudinary_urls:
+            return JsonResponse({"error": "Missing required fields"}, status=400)
+
+        # Create record with Cloudinary URLs
+        record = RTORecord.objects.create(
+            owner=request.user,
+            record_type=record_type,
+            name=name,
+            contact_no=contact_no,
+            address=address,
+        )
+        
+        # Store Cloudinary URLs in the record based on type
+        urls = list(cloudinary_urls)
+        if record_type == "rto":
+            if len(urls) > 0: record.rc_photo = urls[0]
+            if len(urls) > 1: record.insurance_doc = urls[1]
+            if len(urls) > 2: record.pu_check_doc = urls[2]
+            if len(urls) > 3: record.driving_license_doc = urls[3]
+        elif record_type == "school":
+            if len(urls) > 0: record.marks_card = urls[0]
+            if len(urls) > 1: record.photo = urls[1]
+            if len(urls) > 2: record.convocation = urls[2]
+            if len(urls) > 3: record.migration = urls[3]
+        
+        record.save()
+
+        # Create Razorpay order with DYNAMIC amount
+        amount_paise = amount * 100  # Convert rupees to paise dynamically
+        
+        razorpay_order = client.order.create({
+            'amount': amount_paise,
+            'currency': 'INR',
+            'payment_capture': 1,
+        })
+
+        # Map service type to order type
+        order_type_mapping = {
+            'qr': 'qr_download',
+            'pvc': 'pvc_card', 
+            'nfc': 'nfc_card'
+        }
+        
+        order_type = order_type_mapping.get(service_type, 'qr_download')
+
+        order = Order.objects.create(
+            user=request.user,
+            rto_record=record,
+            order_id=razorpay_order['id'],
+            order_type=order_type,
+            amount=amount,  # Store amount in rupees
+            payment_status=Order.Status.PENDING,
+            payment_provider='razorpay',
+        )
+
+        payment_url = reverse('core:payment', kwargs={'record_id': record.id, 'order_type': order_type})
+        return JsonResponse({'payment_url': payment_url})
+        
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
 
 def landing_view(request):
     return render(request, 'landing.html')
-
 
 def home_view(request):
     """Home page view - redirects to dashboard if authenticated, otherwise to landing"""
     if request.user.is_authenticated:
         return redirect('core:dashboard')
     return redirect('core:landing')
-
 
 @login_required
 def dashboard_view(request):
@@ -53,76 +143,6 @@ def dashboard_view(request):
         'stats': stats,
     })
 
-
-@csrf_exempt
-@login_required
-def ajax_create_record(request):
-    if request.method != "POST":
-        return JsonResponse({"error": "Invalid method"}, status=405)
-    
-    try:
-        data = json.loads(request.body)
-    except json.JSONDecodeError:
-        return JsonResponse({"error": "Invalid JSON"}, status=400)
-
-    name = data.get("name")
-    contact_no = data.get("contact_no")
-    address = data.get("address")
-    record_type = data.get("record_type")
-    cloudinary_urls = data.get("uploaded_documents", [])
-
-    if not all([name, contact_no, address, record_type]) or not cloudinary_urls:
-        return JsonResponse({"error": "Missing required fields"}, status=400)
-
-    # Create record with Cloudinary URLs
-    record = RTORecord.objects.create(
-        owner=request.user,
-        record_type=record_type,
-        name=name,
-        contact_no=contact_no,
-        address=address,
-    )
-    
-    # Store Cloudinary URLs in the record based on type
-    urls = list(cloudinary_urls)
-    if record_type == "rto":
-        if len(urls) > 0: record.rc_photo = urls[0]
-        if len(urls) > 1: record.insurance_doc = urls[1]
-        if len(urls) > 2: record.pu_check_doc = urls[2]
-        if len(urls) > 3: record.driving_license_doc = urls[3]
-    elif record_type == "school":
-        if len(urls) > 0: record.marks_card = urls[0]
-        if len(urls) > 1: record.photo = urls[1]
-        if len(urls) > 2: record.convocation = urls[2]
-        if len(urls) > 3: record.migration = urls[3]
-    
-    record.save()
-
-    # Create Razorpay order for ₹2
-    client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
-    amount_paise = 200  # ₹2 in paise
-    
-    razorpay_order = client.order.create({
-        'amount': amount_paise,
-        'currency': 'INR',
-        'payment_capture': 1,
-    })
-
-    order = Order.objects.create(
-        user=request.user,
-        rto_record=record,
-        order_id=razorpay_order['id'],
-        order_type='qr_download',
-        amount=2.00,
-        payment_status=Order.Status.PENDING,
-        payment_provider='razorpay',
-    )
-
-    payment_url = reverse('core:payment', kwargs={'record_id': record.id, 'order_type': 'qr_download'})
-    return JsonResponse({'payment_url': payment_url})
-
-
-# core/views.py (relevant portion)
 @login_required
 def create_record_view(request, record_type):
     # Use the same form for all record types
@@ -145,8 +165,6 @@ def create_record_view(request, record_type):
     # Pass record_type to the template for header/label rendering
     return render(request, 'core/create_record.html', {'form': form, 'record_type': record_type})
 
-
-
 @login_required
 def edit_record_view(request, record_id):
     record = get_object_or_404(RTORecord, id=record_id, owner=request.user)
@@ -166,22 +184,23 @@ def edit_record_view(request, record_id):
 
     return render(request, 'edit_record.html', {'form': form, 'record': record})
 
-
 @login_required
 def record_detail_view(request, record_id):
     record = get_object_or_404(RTORecord, id=record_id, owner=request.user)
     orders = Order.objects.filter(rto_record=record)
     return render(request, 'record_detail.html', {'record': record, 'orders': orders})
 
-
 @login_required
 def payment_view(request, record_id, order_type):
     record = get_object_or_404(RTORecord, id=record_id, owner=request.user)
+    
+    # Updated pricing with dynamic amounts
     pricing = {
         'qr_download': {'amount': 200, 'title': 'QR Code Download', 'description': 'Digital QR Code', 'currency': 'INR'},
         'pvc_card': {'amount': 10000, 'title': 'PVC Card', 'description': 'Physical PVC Card', 'currency': 'INR'},
         'nfc_card': {'amount': 40000, 'title': 'NFC Card', 'description': 'NFC Card', 'currency': 'INR'},
     }
+    
     if order_type not in pricing:
         messages.error(request, "Invalid payment option selected.")
         return redirect('core:dashboard')
@@ -217,7 +236,6 @@ def payment_view(request, record_id, order_type):
     }
 
     return render(request, 'core/payment.html', context)
-
 
 def get_cloudinary_urls(record):
     """Extract all Cloudinary URLs from a record"""
@@ -280,7 +298,6 @@ def get_cloudinary_urls(record):
     print(f"📊 TOTAL DOCUMENTS FOUND: {len(urls)}")
     return urls
 
-
 def generate_static_html(record):
     """Generate static HTML file for the record in deploy_site folder"""
     cloudinary_urls = get_cloudinary_urls(record)
@@ -309,7 +326,6 @@ def generate_static_html(record):
         f.write(html_content)
     
     print(f"✅ Generated HTML file: {folder_path}/index.html")
-
 
 def generate_inline_html(record, cloudinary_urls):
     """Generate HTML content inline if template is not available"""
@@ -377,7 +393,6 @@ def generate_inline_html(record, cloudinary_urls):
 </html>"""
     return html_content
 
-
 def auto_deploy_to_github(record):
     """Automatically commit and push to GitHub"""
     try:
@@ -407,7 +422,6 @@ def auto_deploy_to_github(record):
     except Exception as e:
         print(f"❌ Unexpected error during GitHub deployment: {e}")
 
-
 def generate_qr_code_for_record(record, url):
     """Generate QR code pointing to the gallery URL"""
     qr = qrcode.QRCode(
@@ -429,7 +443,6 @@ def generate_qr_code_for_record(record, url):
     
     record.qr_code_image.save(f'qr_{record.id}.png', File(blob), save=False)
     record.save()
-
 
 @csrf_exempt
 @login_required
@@ -473,7 +486,7 @@ def verify_payment(request):
     auto_deploy_to_github(record)
     
     # Generate QR code with Netlify URL (FIXED: Using consistent domain)
-    netlify_url = f"https://spiffy-croquembouche-98a629.netlify.app/record_{record.id}/"
+    netlify_url = f"https://teal-rugelach-4d0f54.netlify.app/record_{record.id}/"
     generate_qr_code_for_record(record, netlify_url)
     
     record.gallery_html_url = netlify_url
@@ -482,12 +495,10 @@ def verify_payment(request):
     redirect_url = reverse('core:qr_success', kwargs={'record_id': record.id})
     return JsonResponse({'success': True, 'redirect_url': redirect_url})
 
-
 @login_required
 def qr_success_view(request, record_id):
     record = get_object_or_404(RTORecord, id=record_id, owner=request.user)
     return render(request, 'core/qr_success.html', {'record': record})
-
 
 @login_required
 def generate_qr_view(request, record_id):
@@ -503,7 +514,7 @@ def generate_qr_view(request, record_id):
         generate_static_html(record)
         
         # Generate QR code (FIXED: Using consistent domain)
-        netlify_url = f"https://spiffy-croquembouche-98a629.netlify.app/record_{record.id}/"
+        netlify_url = f"https://teal-rugelach-4d0f54.netlify.app/record_{record.id}/"
         generate_qr_code_for_record(record, netlify_url)
         record.gallery_html_url = netlify_url
         record.save()
@@ -517,46 +528,47 @@ def generate_qr_view(request, record_id):
         messages.error(request, f'Failed to generate QR code: {str(e)}')
         return redirect('core:record_detail', record_id=record.id)
 
-
 @login_required
 def qr_preview_view(request, record_id):
     record = get_object_or_404(RTORecord, id=record_id, owner=request.user)
     return render(request, 'qr_preview.html', {'record': record})
-
 
 @require_POST
 @login_required
 def create_payment_order(request):
     return JsonResponse({'success': True, 'message': 'Payment order created'})
 
-
 @login_required
 def download_qr_view(request, record_id):
     record = get_object_or_404(RTORecord, id=record_id, owner=request.user)
     if not record.qr_code_image:
         # Generate QR code if it doesn't exist (FIXED: Using consistent domain)
-        netlify_url = f"https://spiffy-croquembouche-98a629.netlify.app/record_{record.id}/"
+        netlify_url = f"https://teal-rugelach-4d0f54.netlify.app/record_{record.id}/"
         generate_qr_code_for_record(record, netlify_url)
     return render(request, 'core/download_qr.html', {'record': record})
 
+@login_required
+def select_service_view(request):
+    record_type = request.GET.get('type', 'rto')
+    context = {
+        'record_type': record_type
+    }
+    return render(request, 'core/select_service.html', context)
 
 @login_required
 def orders_view(request):
     orders = Order.objects.filter(user=request.user).order_by('-created_at')
     return render(request, 'orders.html', {'orders': orders})
 
-
 @login_required
 def order_detail_view(request, order_id):
     order = get_object_or_404(Order, order_id=order_id, user=request.user)
     return render(request, 'order_detail.html', {'order': order})
 
-
 @login_required
 def order_success_view(request, order_id):
     order = get_object_or_404(Order, order_id=order_id, user=request.user)
     return render(request, 'order_success.html', {'order': order})
-
 
 @login_required
 def order_cancel_view(request, order_id):
@@ -564,27 +576,22 @@ def order_cancel_view(request, order_id):
     messages.info(request, "Order cancellation requested.")
     return redirect('core:orders')
 
-
 @login_required
 def verify_record_view(request, record_id):
     record = get_object_or_404(RTORecord, id=record_id)
     return render(request, 'verify_record.html', {'record': record})
 
-
 @login_required
 def profile_view(request):
     return render(request, 'profile.html')
-
 
 @login_required
 def edit_profile_view(request):
     return render(request, 'edit_profile.html')
 
-
 @login_required
 def search_records_view(request):
     return redirect('core:dashboard')
-
 
 @login_required
 def export_records_view(request):

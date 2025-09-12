@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 <h2 class="fw-bold">Create {{ record_type|title }} Record</h2>
 
-
 {% block content %}
 <div class="container py-4">
     <div class="row justify-content-center">
@@ -9,14 +8,16 @@
             <div class="card border-0 shadow-sm">
                 <div class="card-body p-4">
                     <div class="text-center mb-4">
-                        <h2 class="fw-bold">Create {{ record_type|title }} Record</h2>
-                        <p class="text-muted">Upload up to 4 documents and pay ₹2 to get your QR code</p>
+                        <h2 class="fw-bold" id="recordHeading">Upload your documents</h2>
+                        <p class="text-muted" id="recordDescription">pay ₹2 to securely store the documents and get your QR code</p>
                     </div>
 
                     <!-- Personal Information Form -->
                     <form id="recordForm">
                         {% csrf_token %}
                         <input type="hidden" id="recordType" value="{{ record_type }}">
+                        <input type="hidden" id="selectedService" value="qr">
+                        <input type="hidden" id="serviceAmount" value="2">
                         
                         <div class="row mb-4">
                             <div class="col-md-6 mb-3">
@@ -58,7 +59,7 @@
                         <!-- Submit Button -->
                         <div class="text-center">
                             <button type="submit" id="submitBtn" class="btn btn-success btn-lg px-5" disabled>
-                                <i class="fas fa-credit-card me-2"></i>Proceed to Payment (₹2)
+                                <i class="fas fa-credit-card me-2"></i>Proceed to Payment (<span id="paymentAmount">₹2</span>)
                             </button>
                         </div>
                     </form>
@@ -72,6 +73,30 @@
 <script src="https://widget.cloudinary.com/v2.0/global/all.js"></script>
 <script>
 let uploadedUrls = [];
+
+// Get URL parameters and update pricing
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const service = urlParams.get('service') || 'qr';
+    const price = urlParams.get('price') || '2';
+    
+    // Update service fields
+    document.getElementById('selectedService').value = service;
+    document.getElementById('serviceAmount').value = price;
+    document.getElementById('paymentAmount').textContent = `₹${price}`;
+    
+    // Update description based on service
+    const descriptions = {
+        'qr': 'pay ₹2 to securely store the documents and get your QR code',
+        'pvc': 'pay ₹100 to get your PVC card with doorstep delivery',
+        'nfc': 'pay ₹400 to get your NFC card with doorstep delivery'
+    };
+    
+    const descElement = document.getElementById('recordDescription');
+    if (descriptions[service]) {
+        descElement.textContent = descriptions[service];
+    }
+});
 
 // Initialize Cloudinary widget
 const myWidget = cloudinary.createUploadWidget({
@@ -141,6 +166,8 @@ document.getElementById('recordForm').addEventListener('submit', function(e) {
         contact_no: document.getElementById('contactNo').value,
         address: document.getElementById('address').value,
         record_type: document.getElementById('recordType').value,
+        service_type: document.getElementById('selectedService').value,
+        amount: parseInt(document.getElementById('serviceAmount').value),
         uploaded_documents: uploadedUrls
     };
     

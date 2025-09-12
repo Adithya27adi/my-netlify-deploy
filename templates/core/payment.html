@@ -38,6 +38,24 @@
 <script>
 const orderData = JSON.parse('{{ razorpay_order|escapejs }}');
 
+// Get CSRF token
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+const csrftoken = getCookie('csrftoken');
+
 const options = {
     key: '{{ razorpay_key }}',
     amount: orderData.amount,
@@ -47,15 +65,16 @@ const options = {
     order_id: orderData.id,
     handler: function(response) {
         // Show loading state
-        document.getElementById('payButton').innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
-        document.getElementById('payButton').disabled = true;
+        const payBtn = document.getElementById('payButton');
+        payBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
+        payBtn.disabled = true;
         
         // Verify payment and generate QR
         fetch('{% url "core:verify_payment" %}', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRFToken': '{{ csrf_token }}'
+                'X-CSRFToken': csrftoken
             },
             body: JSON.stringify({
                 razorpay_order_id: response.razorpay_order_id,
@@ -63,24 +82,25 @@ const options = {
                 razorpay_signature: response.razorpay_signature
             })
         })
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.json();
+        })
         .then(data => {
             if (data.success) {
                 // Redirect to QR success page
                 window.location.href = data.redirect_url;
             } else {
-                alert('Payment verification failed: ' + data.error);
-                // Reset button
-                document.getElementById('payButton').innerHTML = '<i class="fas fa-lock me-2"></i>Pay ₹{{ amount_in_rupees }}';
-                document.getElementById('payButton').disabled = false;
+                alert('Payment verification failed: ' + (data.error || 'Unknown error'));
+                resetButton();
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('An error occurred during payment verification');
-            // Reset button
-            document.getElementById('payButton').innerHTML = '<i class="fas fa-lock me-2"></i>Pay ₹{{ amount_in_rupees }}';
-            document.getElementById('payButton').disabled = false;
+            alert('An error occurred during payment verification. Please try again.');
+            resetButton();
         });
     },
     prefill: {
@@ -93,15 +113,35 @@ const options = {
     modal: {
         ondismiss: function() {
             // Reset button if payment modal is closed
-            document.getElementById('payButton').innerHTML = '<i class="fas fa-lock me-2"></i>Pay ₹{{ amount_in_rupees }}';
-            document.getElementById('payButton').disabled = false;
+            resetButton();
         }
     }
 };
 
+function resetButton() {
+    const payBtn = document.getElementById('payButton');
+    payBtn.innerHTML = '<i class="fas fa-lock me-2"></i>Pay ₹{{ amount_in_rupees }}';
+    payBtn.disabled = false;
+}
+
 document.getElementById('payButton').onclick = function() {
-    const rzp = new Razorpay(options);
-    rzp.open();
+    try {
+        const rzp = new Razorpay(options);
+        rzp.on('payment.failed', function (response) {
+            console.error('Payment failed:', response.error);
+            alert('Payment failed: ' + response.error.description);
+            resetButton();
+        });
+        rzp.open();
+    } catch (error) {
+        console.error('Error opening Razorpay:', error);
+        alert('Failed to open payment window. Please try again.');
+        resetButton();
+    }
 };
+
+// Auto-open payment modal when page loads (optional)
+// Uncomment the line below if you want automatic payment modal
+// document.getElementById('payButton').click();
 </script>
 {% endblock %}

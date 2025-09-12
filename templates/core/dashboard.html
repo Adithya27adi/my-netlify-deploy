@@ -12,7 +12,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-8">
                             <h2 class="fw-bold mb-2">Welcome back, {{ user.first_name|default:user.email }}!</h2>
-                            <p class="mb-0 opacity-75">Manage your RTO documents securely and efficiently</p>
+                            <p class="mb-0 opacity-75">Manage your Documents securely and efficiently</p>
                         </div>
                         <div class="col-md-4 text-end d-none d-md-block">
                             <div class="dropdown">
@@ -20,7 +20,7 @@
                                     <i class="fas fa-user me-1"></i>Account
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{% url 'authentication:profile' %}">
+                                    <li><a class="dropdown-item" href="{% url 'core:profile' %}">
                                         <i class="fas fa-user me-2"></i>Profile</a></li>
                                     <li><a class="dropdown-item" href="{% url 'core:orders' %}">
                                         <i class="fas fa-shopping-cart me-2"></i>Orders</a></li>
@@ -43,54 +43,6 @@
         </div>
     </div>
 
-    <!-- Statistics Cards -->
-    <div class="row mb-4">
-        <div class="col-lg-3 col-md-6 mb-3">
-            <div class="card border-0 shadow-sm h-100">
-                <div class="card-body text-center">
-                    <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                        <i class="fas fa-file-alt text-primary fa-2x"></i>
-                    </div>
-                    <h3 class="fw-bold">{{ stats.total_records }}</h3>
-                    <p class="text-muted mb-0">Total Records</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-3">
-            <div class="card border-0 shadow-sm h-100">
-                <div class="card-body text-center">
-                    <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                        <i class="fas fa-check-circle text-success fa-2x"></i>
-                    </div>
-                    <h3 class="fw-bold">{{ stats.approved_records }}</h3>
-                    <p class="text-muted mb-0">Approved</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-3">
-            <div class="card border-0 shadow-sm h-100">
-                <div class="card-body text-center">
-                    <div class="bg-warning bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                        <i class="fas fa-clock text-warning fa-2x"></i>
-                    </div>
-                    <h3 class="fw-bold">{{ stats.pending_records }}</h3>
-                    <p class="text-muted mb-0">Pending</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-3">
-            <div class="card border-0 shadow-sm h-100">
-                <div class="card-body text-center">
-                    <div class="bg-info bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                        <i class="fas fa-shopping-cart text-info fa-2x"></i>
-                    </div>
-                    <h3 class="fw-bold">{{ stats.total_orders }}</h3>
-                    <p class="text-muted mb-0">Orders</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Quick Actions -->
     <div class="row mb-4">
         <div class="col-12">
@@ -101,7 +53,7 @@
                 <div class="card-body">
                     <div class="row g-3">
                         <div class="col-md-4">
-                            <a href="{% url 'core:create_record' 'rto' %}" class="card border-2 border-primary border-opacity-25 text-decoration-none quick-action-card">
+                            <a href="{% url 'core:select_service' %}" class="card border-2 border-primary border-opacity-25 text-decoration-none quick-action-card">
                                 <div class="card-body text-center p-4">
                                     <i class="fas fa-car text-primary fa-3x mb-3"></i>
                                     <h6 class="fw-bold">RTO Record</h6>
@@ -110,7 +62,7 @@
                             </a>
                         </div>
                         <div class="col-md-4">
-                            <a href="{% url 'core:create_record' 'school' %}" class="card border-2 border-success border-opacity-25 text-decoration-none quick-action-card">
+                            <a href="{% url 'core:select_service' %}" class="card border-2 border-success border-opacity-25 text-decoration-none quick-action-card">
                                 <div class="card-body text-center p-4">
                                     <i class="fas fa-graduation-cap text-success fa-3x mb-3"></i>
                                     <h6 class="fw-bold">School Record</h6>
@@ -119,11 +71,11 @@
                             </a>
                         </div>
                         <div class="col-md-4">
-                            <a href="{% url 'core:create_record' 'other' %}" class="card border-2 border-warning border-opacity-25 text-decoration-none quick-action-card">
+                            <a href="{% url 'core:select_service' %}" class="card border-2 border-warning border-opacity-25 text-decoration-none quick-action-card">
                                 <div class="card-body text-center p-4">
                                     <i class="fas fa-folder text-warning fa-3x mb-3"></i>
                                     <h6 class="fw-bold">Other Documents</h6>
-                                    <p class="text-muted small mb-0">Custom document name and upload</p>
+                                    <p class="text-muted small mb-0">Upload any kind of documents</p>
                                 </div>
                             </a>
                         </div>
@@ -139,10 +91,7 @@
         <div class="col-lg-8 mb-4">
             <div class="card border-0 shadow-sm">
                 <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center">
-                    <h5 class="fw-bold mb-0">Your Records</h5>
-                    <a href="{% url 'core:create_record' 'rto' %}" class="btn btn-primary btn-sm">
-                        <i class="fas fa-plus me-1"></i>New Record
-                    </a>
+                    <h5 class="fw-bold mb-0">Your Records </h5>
                 </div>
                 <div class="card-body p-0">
                     {% if user_records %}
@@ -223,7 +172,7 @@
             </div>
         </div>
 
-        <!-- Recent Orders -->
+        <!-- Recent Orders
         <div class="col-lg-4 mb-4">
             <div class="card border-0 shadow-sm">
                 <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center">
@@ -262,7 +211,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <style>
     .bg-gradient-primary {

@@ -44,4 +44,9 @@ urlpatterns = [
 
     path('ajax/verify-payment/', views.verify_payment, name='verify_payment'),
     path('qr-success/<uuid:record_id>/', views.qr_success_view, name='qr_success'),
+    # In your urls.py
+    path('select-service/', views.select_service_view, name='select_service'),
+    path('payment/', views.payment_view, name='payment'),
+
+    
 ]

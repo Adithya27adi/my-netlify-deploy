@@ -60,13 +60,13 @@
                             <i class="fas fa-file-alt me-1"></i>Records
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'core:create_record' 'rto' %}">
+                            <li><a class="dropdown-item" id="rtoRecord" href="{% url 'core:select_service' %}">
                                 <i class="fas fa-car me-2"></i>New RTO Record
                             </a></li>
-                            <li><a class="dropdown-item" href="{% url 'core:create_record' 'school' %}">
+                            <li><a class="dropdown-item" id="schoolRecord" href="{% url 'core:select_service' %}">
                                 <i class="fas fa-graduation-cap me-2"></i>New School Record
                             </a></li>
-                            <li><a class="dropdown-item" href="{% url 'core:create_record' 'other' %}">
+                            <li><a class="dropdown-item" id="otherRecord" href="{% url 'core:select_service' %}">
                                 <i class="fas fa-folder me-2"></i>New Other Record
                             </a></li>
                         </ul>
@@ -136,6 +136,14 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    {% block extra_js %}{% endblock %}
+    {% block extra_js %}
+    <script>
+document.querySelectorAll('.dropdown-item').forEach(link => {
+    link.addEventListener('click', function(event) {
+        localStorage.setItem('selected_record_id', event.currentTarget.id);
+    });
+});
+</script>
+{% endblock %}
 </body>
 </html>
