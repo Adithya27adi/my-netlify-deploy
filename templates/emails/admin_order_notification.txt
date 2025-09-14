@@ -1,0 +1,24 @@
+New {{ service_name }} Order Received!
+
+Customer Details:
+- Name: {{ record.name }}
+- Contact: {{ record.contact_no }}
+- Delivery Address: {{ record.address }}
+- Record Type: {{ record.get_record_type_display }}
+- Service Type: {{ service_name }}
+- Order Date: {{ record.created_at|date:"F d, Y g:i A" }}
+
+QR Code URL: {{ qr_code_url }}
+
+Action Required:
+Please prepare the {{ service_name }} with the QR code and ship to the delivery address above.
+
+{% if order_type == 'pvc' %}
+Service: Physical PVC Card (₹100)
+{% else %}
+Service: NFC Enabled Card (₹400)
+{% endif %}
+
+---
+RTO Management System
+{{ record.created_at|date:"F d, Y g:i A" }}

@@ -16,6 +16,8 @@ from django.urls import reverse
 from django.views.decorators.http import require_POST
 from django.core.files import File
 from django.template.loader import render_to_string
+from core.utils.email_utils import send_order_notification_to_admin
+
 
 from .models import RTORecord, Order
 from .forms import RTORecordForm, SchoolRecordForm, OrderForm
@@ -124,23 +126,37 @@ def home_view(request):
 
 @login_required
 def dashboard_view(request):
-    user_records_qs = RTORecord.objects.filter(owner=request.user).order_by("-created_at")
-    user_orders_qs = Order.objects.filter(user=request.user).order_by("-created_at")
+    sort = request.GET.get('sort', 'recent')
     
-    user_records = user_records_qs[:10]
-    user_orders = user_orders_qs[:5]
-    
+    user_records_qs = RTORecord.objects.filter(owner=request.user)
+    user_orders_qs = Order.objects.filter(user=request.user).order_by('-created_at')
+
+    # Apply sorting based on query parameter
+    if sort == "oldest":
+        user_records = user_records_qs.order_by('created_at')
+    elif sort == "name":
+        user_records = user_records_qs.order_by('name')
+    elif sort == "date":
+        user_records = user_records_qs.order_by('created_at')
+    else:  # recent
+        user_records = user_records_qs.order_by('-created_at')
+
+    # Limit records to 10 for dashboard
+    user_records = user_records[:10]
+    user_orders = user_orders_qs[:10]
+
     stats = {
         "total_records": user_records_qs.count(),
         "approved_records": user_records_qs.filter(status='approved').count(),
         "pending_records": user_records_qs.filter(status='pending').count(),
         "total_orders": user_orders_qs.count(),
     }
-    
+
     return render(request, 'core/dashboard.html', {
         'user_records': user_records,
         'user_orders': user_orders,
         'stats': stats,
+        'sort': sort,  # pass current sort to template for UI state
     })
 
 @login_required
@@ -328,18 +344,22 @@ def generate_static_html(record):
     print(f"✅ Generated HTML file: {folder_path}/index.html")
 
 def generate_inline_html(record, cloudinary_urls):
-    """Generate HTML content inline if template is not available"""
     docs_html = ""
     for i, url in enumerate(cloudinary_urls):
-        download_url = f"{url}?fl_attachment"
+        filename = url.split("/")[-1].split("?")[0] or f"Document_{i+1}"
+        download_url = f"{url}?fl_attachment"  # For Cloudinary; but see below for the <a download> trick
         docs_html += f"""
         <div class="doc-card">
             <img src="{url}" alt="Document {i+1}" class="doc-image" loading="lazy">
             <div class="doc-info">
                 <h3>Document {i+1}</h3>
                 <div class="btn-group">
-                    <a href="{url}" class="btn btn-view" target="_blank">👁️ View</a>
-                    <a href="{download_url}" class="btn btn-download" target="_blank">⬇️ Download</a>
+                    <a href="{url}" class="btn btn-view" target="_blank">
+                        <span class="icon-eye"></span> View
+                    </a>
+                    <a href="{download_url}" download="{filename}" class="btn btn-download">
+                        <span class="icon-download"></span> Download
+                    </a>
                 </div>
             </div>
         </div>
@@ -352,46 +372,137 @@ def generate_inline_html(record, cloudinary_urls):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documents for {record.name}</title>
     <style>
-        body {{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }}
-        .container {{ max-width: 1200px; margin: 0 auto; }}
-        .header {{ text-align: center; margin-bottom: 40px; background: rgba(255,255,255,0.95); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }}
-        .header h1 {{ color: #333; margin-bottom: 10px; font-size: 2.5em; }}
-        .header p {{ color: #666; font-size: 1.1em; }}
-        .gallery {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px; }}
-        .doc-card {{ background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: transform 0.3s ease; }}
-        .doc-card:hover {{ transform: translateY(-5px); }}
-        .doc-image {{ width: 100%; height: 250px; object-fit: cover; border-bottom: 1px solid #eee; }}
-        .doc-info {{ padding: 20px; text-align: center; }}
-        .doc-info h3 {{ margin: 0 0 15px 0; color: #333; font-size: 1.2em; }}
-        .btn-group {{ display: flex; gap: 10px; justify-content: center; }}
-        .btn {{ padding: 10px 20px; text-decoration: none; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; }}
-        .btn-view {{ background: #667eea; color: white; }}
-        .btn-view:hover {{ background: #5a67d8; }}
-        .btn-download {{ background: #48bb78; color: white; }}
-        .btn-download:hover {{ background: #38a169; }}
-        .footer {{ text-align: center; margin-top: 40px; color: rgba(255,255,255,0.8); }}
+        :root {{
+            --accent: #667eea;
+            --accent-hover: #5a67d8;
+            --success: #48bb78;
+            --success-hover: #38a169;
+            --bg-card: rgba(255,255,255,0.14);
+            --bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --txt-main: #252f44;
+            --txt-light: #fff;
+            --shadow-card: 0 8px 32px rgba(102,126,234,.13);
+        }}
+        * {{ box-sizing: border-box; }}
+        body {{
+            margin: 0; padding: 0;
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            background: var(--bg); min-height: 100vh;
+        }}
+        .container {{
+            max-width: 1200px; margin: 0 auto; padding: 14px;
+        }}
+        .header {{
+            background: var(--bg-card);
+            border-radius: 22px;
+            box-shadow: var(--shadow-card);
+            color: var(--txt-main);
+            margin-bottom: 24px;
+            text-align: center;
+            padding: 32px 20px 24px;
+        }}
+        .header h1 {{
+            font-size: 2.5em; font-weight: 900; margin: 0 0 12px;
+            color: var(--accent);
+            letter-spacing: -1px;
+            display: flex; gap: .45em; align-items: center; justify-content: center;
+        }}
+        .header .icon-doc {{
+            font-size: 1.2em; color: var(--accent);
+            margin-bottom: 3px;
+        }}
+        .header-info {{
+            display: flex; gap: 2em; justify-content: center; flex-wrap: wrap; font-size:1.11em; margin-top: 12px; color: #222;
+        }}
+        .header-info .icon {{
+            margin-right: .25em; color: var(--accent);
+        }}
+        .gallery {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }}
+        .doc-card {{
+            background: var(--bg-card);
+            border-radius: 19px;
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+            display: flex; flex-direction: column; align-items: center;
+            transition: box-shadow .23s cubic-bezier(.4,.6,.18,1);
+        }}
+        .doc-card:hover {{
+            box-shadow: 0 12px 36px rgba(102,126,234,.22);
+        }}
+        .doc-image {{
+            max-width: 100%; width: 100%; height: 220px;
+            object-fit: cover; background: #eee;
+        }}
+        .doc-info {{
+            padding: 18px 16px 18px; text-align: center; width:100%;
+        }}
+        .doc-info h3 {{
+            font-size: 1.16em; margin: 6px 0 20px;
+            color: var(--accent-hover); font-weight: 600;
+        }}
+        .btn-group {{
+            display: flex; gap: 12px; justify-content: center; margin-top: 4px;
+        }}
+        .btn {{
+            display: inline-block; min-width: 94px; padding: 10px 19px;
+            border-radius: 11px; font-weight: 700;
+            text-decoration: none; font-size: 1em;
+            transition: background .22s, box-shadow .22s;
+            border: none; cursor: pointer;
+            box-shadow: 0 2px 14px rgba(102,126,234,0.04);
+            display: flex; align-items: center; gap: .6em; justify-content: center;
+        }}
+        .btn-view {{
+            background: var(--accent); color: var(--txt-light);
+        }}
+        .btn-view:hover {{ background: var(--accent-hover); }}
+        .btn-download {{
+            background: var(--success); color: var(--txt-light);
+        }}
+        .btn-download:hover {{ background: var(--success-hover); }}
+        /* Small icon helpers */
+        .icon-eye::before {{ content: "👁️"; position: relative; top: 1px; }}
+        .icon-download::before {{ content: "⬇️"; position: relative; top: 2px; }}
+        .icon-doc::before {{ content:"📄"; }}
+        .icon-phone::before {{ content:"📞"; }}
+        .icon-type::before {{ content:"🏷️"; }}
+        .icon-date::before {{ content:"📅"; color: #c0392b; }}
+        .footer {{
+            text-align: center; color: #eee; font-size: 1.05em; margin-bottom: 8px;
+        }}
+        /* Responsive for small screens */
+        @media (max-width: 600px){{
+            .header h1 {{ font-size: 1.45em; }}
+            .gallery {{ grid-template-columns: 1fr; gap: 18px }}
+        }}
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>📄 Documents for {record.name}</h1>
-            <p><strong>📞 Contact:</strong> {record.contact_no}</p>
-            <p><strong>🏷️ Type:</strong> {record.get_record_type_display()}</p>
-            <p><strong>📅 Created:</strong> {record.created_at.strftime('%B %d, %Y')}</p>
+            <h1><span class="icon-doc"></span> Documents for {record.name}</h1>
+            <div class="header-info">
+                <span><span class="icon-phone icon"></span> <b>Contact:</b> {record.contact_no}</span>
+                <span><span class="icon-date icon"></span> <b>Created:</b> {record.created_at.strftime('%B %d, %Y')}</span>
+            </div>
         </div>
-        
         <div class="gallery">
             {docs_html}
         </div>
-        
         <div class="footer">
-            <p>Generated by RTO Management System | Secure Document Storage</p>
+            <p>Generated by <strong>Secure RTO Document Management</strong> | All documents encrypted &amp; secure</p>
         </div>
     </div>
 </body>
-</html>"""
+</html>
+"""
     return html_content
+
 
 def auto_deploy_to_github(record):
     """Automatically commit and push to GitHub"""
@@ -485,20 +596,66 @@ def verify_payment(request):
     # Auto-commit and push to GitHub
     auto_deploy_to_github(record)
     
-    # Generate QR code with Netlify URL (FIXED: Using consistent domain)
+    # Generate QR code with Netlify URL
     netlify_url = f"https://teal-rugelach-4d0f54.netlify.app/record_{record.id}/"
     generate_qr_code_for_record(record, netlify_url)
     
     record.gallery_html_url = netlify_url
     record.save()
     
+    # Detect the exact order_type from Order object or fallback detection
+    if hasattr(order, 'service_type') and order.service_type:
+        order_type = order.service_type
+    else:
+        referrer = request.META.get('HTTP_REFERER', '')
+        if '/nfc_card/' in referrer:
+            order_type = 'nfc'
+        elif '/pvc_card/' in referrer:
+            order_type = 'pvc'
+        elif hasattr(order, 'amount'):
+            if order.amount == 40000:
+                order_type = 'nfc'
+            elif order.amount == 10000:
+                order_type = 'pvc'
+            else:
+                order_type = 'qr'
+        else:
+            order_type = 'qr'
+
+    # Send admin notification for pvc/nfc with valid address
+    try:
+        if order_type in ['pvc', 'nfc'] and record.address and record.address.strip():
+            send_order_notification_to_admin(record, order_type, netlify_url)
+            print(f"✅ Admin notification sent for {order_type} order")
+    except Exception as e:
+        print(f"❌ Failed to send admin notification: {e}")
+
+    # Store order_type for success page display
+    request.session['order_type'] = order_type
+    request.session['order_success'] = True
+    
     redirect_url = reverse('core:qr_success', kwargs={'record_id': record.id})
     return JsonResponse({'success': True, 'redirect_url': redirect_url})
 
 @login_required
 def qr_success_view(request, record_id):
-    record = get_object_or_404(RTORecord, id=record_id, owner=request.user)
-    return render(request, 'core/qr_success.html', {'record': record})
+    record = get_object_or_404(RTORecord, id=record_id)
+    
+    order_type = request.session.get('order_type', 'qr')
+    order_success = request.session.get('order_success', False)
+    
+    if 'order_type' in request.session:
+        del request.session['order_type']
+    if 'order_success' in request.session:
+        del request.session['order_success']
+    
+    context = {
+        'record': record,
+        'order_type': order_type,
+        'order_success': order_success,
+    }
+    
+    return render(request, 'core/qr_success.html', context)
 
 @login_required
 def generate_qr_view(request, record_id):
@@ -555,15 +712,52 @@ def select_service_view(request):
     }
     return render(request, 'core/select_service.html', context)
 
+
 @login_required
 def orders_view(request):
-    orders = Order.objects.filter(user=request.user).order_by('-created_at')
-    return render(request, 'orders.html', {'orders': orders})
+    user_orders = Order.objects.filter(
+        user=request.user, order_type__in=['pvc_card', 'nfc_card']
+    ).order_by('-created_at')
+    return render(request, 'core/orders.html', {'user_orders': user_orders})
+
+
+@login_required
+def edit_profile_view(request):
+    user = request.user
+    profile = user.core_profile  # Correct access to extended profile
+
+    if request.method == 'POST':
+        # Grab POSTed data
+        first_name = request.POST.get('first_name', '').strip()
+        phone = request.POST.get('phone', '').strip()
+        address = request.POST.get('address', '').strip()
+        profile_picture = request.FILES.get('profile_picture')
+
+        # Update model fields
+        user.first_name = first_name
+        profile.phone = phone
+        profile.address = address
+
+        if profile_picture:
+            profile.profile_picture = profile_picture
+
+        try:
+            user.save()
+            profile.save()
+            messages.success(request, 'Profile updated successfully.')
+            return redirect('core:profile')
+        except Exception as e:
+            messages.error(request, f'Error updating profile: {e}')
+            return render(request, 'core/edit_profile.html', {'user': user, 'profile': profile})
+
+    return render(request, 'core/edit_profile.html', {'user': user, 'profile': profile})
+
 
 @login_required
 def order_detail_view(request, order_id):
     order = get_object_or_404(Order, order_id=order_id, user=request.user)
-    return render(request, 'order_detail.html', {'order': order})
+    return render(request, 'core/order_detail.html', {'order': order})
+
 
 @login_required
 def order_success_view(request, order_id):
@@ -583,11 +777,12 @@ def verify_record_view(request, record_id):
 
 @login_required
 def profile_view(request):
-    return render(request, 'profile.html')
+    return render(request, 'core/profile.html', {
+        'user': request.user,
+        'profile': request.user.core_profile
+    })
 
-@login_required
-def edit_profile_view(request):
-    return render(request, 'edit_profile.html')
+
 
 @login_required
 def search_records_view(request):

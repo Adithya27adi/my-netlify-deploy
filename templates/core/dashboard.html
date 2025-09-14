@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Dashboard - RTO Record Management{% endblock %}
+{% block title %}Dashboard - Digital Record Management{% endblock %}
 
 {% block content %}
 <div class="container-fluid py-4">
@@ -16,9 +16,9 @@
                         </div>
                         <div class="col-md-4 text-end d-none d-md-block">
                             <div class="dropdown">
-                                <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                <!-- <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
                                     <i class="fas fa-user me-1"></i>Account
-                                </button>
+                                </button> -->
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="{% url 'core:profile' %}">
                                         <i class="fas fa-user me-2"></i>Profile</a></li>
@@ -85,133 +85,91 @@
         </div>
     </div>
 
-    <!-- Records and Orders -->
-    <div class="row">
-        <!-- Recent Records -->
-        <div class="col-lg-8 mb-4">
-            <div class="card border-0 shadow-sm">
-                <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center">
-                    <h5 class="fw-bold mb-0">Your Records </h5>
-                </div>
-                <div class="card-body p-0">
-                    {% if user_records %}
-                        <div class="table-responsive">
-                            <table class="table table-hover mb-0">
-                                <thead class="bg-light">
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Type</th>
-                                        <th>Status</th>
-                                        <th>Documents</th>
-                                        <th>Created</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for record in user_records %}
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-                                                    <i class="fas fa-user text-primary"></i>
-                                                </div>
-                                                <div>
-                                                    <h6 class="mb-0">{{ record.name }}</h6>
-                                                    <small class="text-muted">{{ record.contact_no }}</small>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-secondary">{{ record.get_record_type_display }}</span>
-                                        </td>
-                                        <td>
-                                            {% if record.status == 'approved' %}
-                                                <span class="badge bg-success">{{ record.get_status_display }}</span>
-                                            {% elif record.status == 'pending' %}
-                                                <span class="badge bg-warning">{{ record.get_status_display }}</span>
-                                            {% elif record.status == 'rejected' %}
-                                                <span class="badge bg-danger">{{ record.get_status_display }}</span>
-                                            {% else %}
-                                                <span class="badge bg-info">{{ record.get_status_display }}</span>
-                                            {% endif %}
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-light text-dark">{{ record.get_document_count }} uploaded</span>
-                                        </td>
-                                        <td>
-                                            <small class="text-muted">{{ record.created_at|date:"M d, Y" }}</small>
-                                        </td>
-                                        <td>
-                                            <div class="btn-group btn-group-sm">
-                                                <a href="{% url 'core:record_detail' record.id %}" class="btn btn-outline-primary btn-sm">
-                                                    <i class="fas fa-eye"></i>
-                                                </a>
-                                                {% if record.qr_code_image %}
-                                                    <button class="btn btn-outline-success btn-sm" title="QR Generated">
-                                                        <i class="fas fa-qrcode"></i>
-                                                    </button>
-                                                {% endif %}
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    {% else %}
-                        <div class="text-center py-5">
-                            <i class="fas fa-file-plus text-muted fa-3x mb-3"></i>
-                            <h6 class="text-muted">No records yet</h6>
-                            <p class="text-muted">Create your first RTO record to get started</p>
-                            <a href="{% url 'core:create_record' 'rto' %}" class="btn btn-primary">
-                                <i class="fas fa-plus me-2"></i>Create First Record
-                            </a>
-                        </div>
-                    {% endif %}
-                </div>
-            </div>
+ <div class="container-fluid px-0">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center flex-wrap">
+          <h5 class="fw-bold mb-0 d-flex align-items-center">
+            <i class="fas fa-qrcode me-2 text-primary"></i>QR Codes Created
+          </h5>
+          <!-- Modern Filter using Bootstrap input group and select -->
+          <form method="get" class="d-flex align-items-center gap-2 my-2 my-md-0">
+            <label for="sortSelect" class="visually-hidden">Sort By</label>
+            <select id="sortSelect" name="sort" class="form-select form-select-sm" aria-label="Sort Records">
+              <option value="recent" {% if sort == "recent" %}selected{% endif %}>Most Recent</option>
+              <option value="oldest" {% if sort == "oldest" %}selected{% endif %}>Oldest First</option>
+              <option value="name" {% if sort == "name" %}selected{% endif %}>Name (A-Z)</option>
+              <option value="date" {% if sort == "date" %}selected{% endif %}>Date</option>
+            </select>
+            <button type="submit" class="btn btn-outline-primary btn-sm" aria-label="Apply Sort Filter">
+              <i class="fas fa-filter"></i>
+            </button>
+          </form>
         </div>
 
-        <!-- Recent Orders
-        <div class="col-lg-4 mb-4">
-            <div class="card border-0 shadow-sm">
-                <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center">
-                    <h5 class="fw-bold mb-0">Recent Orders</h5>
-                    <a href="{% url 'core:orders' %}" class="btn btn-outline-primary btn-sm">View All</a>
-                </div>
-                <div class="card-body p-0">
-                    {% if recent_orders %}
-                        {% for order in recent_orders %}
-                        <div class="d-flex align-items-center p-3 border-bottom">
-                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-                                {% if order.order_type == 'qr_download' %}
-                                    <i class="fas fa-download text-primary"></i>
-                                {% elif order.order_type == 'pvc_card' %}
-                                    <i class="fas fa-credit-card text-primary"></i>
-                                {% else %}
-                                    <i class="fas fa-wifi text-primary"></i>
-                                {% endif %}
+        <div class="card-body p-0">
+          {% with qr_records=user_records|dictsortreversed:"created_at" %}
+            {% if qr_records %}
+              <div class="table-responsive px-3">
+                <table class="table table-hover align-middle mb-0">
+                  <thead class="bg-light">
+                    <tr>
+                      <th>Name</th>
+                      <th>Created</th>
+                      <th class="text-center">QR Code</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for record in qr_records|slice:":5" %}
+                      {% if record.qr_code_image %}
+                        <tr>
+                          <td>
+                            <div class="d-flex align-items-center">
+                              <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 36px; height: 36px;">
+                                <i class="fas fa-user text-primary"></i>
+                              </div>
+                              <span class="fw-semibold fs-6">{{ record.name }}</span>
                             </div>
-                            <div class="flex-grow-1">
-                                <h6 class="mb-1">{{ order.get_order_type_display }}</h6>
-                                <small class="text-muted">₹{{ order.total_amount }} • {{ order.created_at|date:"M d" }}</small>
-                            </div>
-                            <span class="badge bg-{% if order.payment_status == 'completed' %}success{% elif order.payment_status == 'pending' %}warning{% else %}secondary{% endif %}">
-                                {{ order.get_payment_status_display }}
-                            </span>
-                        </div>
-                        {% endfor %}
-                    {% else %}
-                        <div class="text-center py-4">
-                            <i class="fas fa-shopping-cart text-muted fa-2x mb-2"></i>
-                            <p class="text-muted mb-0">No orders yet</p>
-                        </div>
-                    {% endif %}
-                </div>
-            </div>
+                          </td>
+                          <td>
+                            <span class="badge bg-light text-dark fs-7">{{ record.created_at|date:"M d, Y" }}</span>
+                          </td>
+                          <td class="text-center">
+                            <a href="{{ record.qr_code_image.url }}" target="_blank"
+                               class="btn btn-success btn-sm rounded-pill py-1 px-3" title="View QR Code">
+                              <i class="fas fa-qrcode me-1"></i>View
+                            </a>
+                          </td>
+                        </tr>
+                      {% endif %}
+                    {% empty %}
+                      <tr>
+                        <td colspan="3" class="text-center text-muted py-5">
+                          <i class="fas fa-qrcode fa-4x mb-3"></i>
+                          <div class="fs-5">No QR codes have been created yet.</div>
+                          <small class="text-muted">Generate QR for your RTO record to display it here.</small>
+                        </td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+
+              
+            {% else %}
+              <div class="text-center py-5 px-3">
+                <i class="fas fa-qrcode text-muted fa-4x mb-3"></i>
+                <h5 class="text-muted">No QR codes generated yet</h5>
+                <p class="text-muted">Generate QR for your RTO record to display it here.</p>
+              </div>
+            {% endif %}
+          {% endwith %}
         </div>
+      </div>
     </div>
-</div> -->
+  </div>
+</div>
 
 <style>
     .bg-gradient-primary {
@@ -230,12 +188,43 @@
     .table-hover tbody tr:hover {
         background-color: rgba(102, 126, 234, 0.05);
     }
+
+    .order-cards-container {
+        display: flex;
+        flex-direction: column;
+        max-height: 600px;
+        overflow-y: auto;
+    }
+
+    .order-card {
+        background: #fff;
+        transition: box-shadow 0.3s ease;
+        border-color: #ddd;
+    }
+
+    .order-card:hover {
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .order-card h4 {
+        color: #007bff;
+        margin-bottom: 0.5rem;
+    }
+
+    .order-card p {
+        margin-bottom: 0.4rem;
+        color: #555;
+    }
+
+    .btn-sm {
+        font-size: 0.85rem;
+        padding: 0.25em 0.6em;
+    }
 </style>
 
 <script>
     // Add smooth animations
     document.addEventListener('DOMContentLoaded', function() {
-        // Animate cards on load
         const cards = document.querySelectorAll('.card');
         cards.forEach((card, index) => {
             card.style.opacity = '0';

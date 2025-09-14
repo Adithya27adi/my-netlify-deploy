@@ -1,238 +1,153 @@
 {% extends 'base.html' %}
 
-{% block title %}My Orders - RTO Management{% endblock %}
+{% block title %}Your Card Orders - RTO Manager{% endblock %}
 
 {% block content %}
-<div class="container py-4">
-    <!-- Header -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="d-flex justify-content-between align-items-center">
-                <h2 class="fw-bold">
-                    <i class="fas fa-shopping-cart text-primary me-2"></i>My Orders
-                </h2>
-                <a href="{% url 'core:dashboard' %}" class="btn btn-outline-primary">
-                    <i class="fas fa-tachometer-alt me-2"></i>Dashboard
-                </a>
-            </div>
-        </div>
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold display-6">📇 Your Card Orders</h2>
+        <p class="text-muted">Track your PVC and NFC card orders in one place</p>
     </div>
 
-    <!-- Orders List -->
-    {% if page_obj %}
-        <div class="row">
-            {% for order in page_obj %}
-            <div class="col-lg-6 mb-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-header bg-white border-0 py-3">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <h6 class="fw-bold mb-0">Order #{{ order.order_id|truncatechars:8 }}</h6>
-                            <span class="badge bg-{% if order.payment_status == 'completed' %}success{% elif order.payment_status == 'pending' %}warning{% elif order.payment_status == 'failed' %}danger{% else %}secondary{% endif %}">
-                                {{ order.get_payment_status_display }}
-                            </span>
-                        </div>
+    <div id="orders-container" class="row g-4 justify-content-center">
+        {% for order in user_orders %}
+        <div class="col-12 col-sm-6 col-lg-4 order-card-wrapper {% if forloop.counter > 6 %}d-none{% endif %}">
+            <div class="card order-card shadow-sm border-0 rounded-4 overflow-hidden h-100">
+                {% if order.order_type == 'pvc_card' %}
+                <div class="order-card-header bg-pvc-card position-relative">
+                    <div class="icon-circle">
+                        <i class="fas fa-credit-card"></i>
                     </div>
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
-                                {% if order.order_type == 'qr_download' %}
-                                    <i class="fas fa-download text-primary fa-lg"></i>
-                                {% elif order.order_type == 'pvc_card' %}
-                                    <i class="fas fa-credit-card text-primary fa-lg"></i>
-                                {% else %}
-                                    <i class="fas fa-wifi text-primary fa-lg"></i>
-                                {% endif %}
-                            </div>
-                            <div>
-                                <h6 class="fw-bold mb-1">{{ order.get_order_type_display }}</h6>
-                                <p class="text-muted small mb-0">{{ order.rto_record.name }}</p>
-                            </div>
-                        </div>
-                        
-                        <div class="row g-2 mb-3">
-                            <div class="col-6">
-                                <small class="text-muted">Amount</small>
-                                <p class="fw-bold mb-0">₹{{ order.total_amount }}</p>
-                            </div>
-                            <div class="col-6">
-                                <small class="text-muted">Date</small>
-                                <p class="fw-bold mb-0">{{ order.created_at|date:"M d, Y" }}</p>
-                            </div>
-                        </div>
-                        
-                        {% if order.delivery_address %}
-                        <div class="mb-3">
-                            <small class="text-muted">Delivery Address</small>
-                            <p class="small mb-0">{{ order.delivery_address|truncatechars:60 }}</p>
-                        </div>
-                        {% endif %}
-                    </div>
-                    <div class="card-footer bg-white border-0 py-3">
-                        <div class="d-flex justify-content-between">
-                            <a href="{% url 'core:record_detail' order.rto_record.id %}" class="btn btn-outline-primary btn-sm">
-                                <i class="fas fa-eye me-1"></i>View Record
-                            </a>
-                            {% if order.payment_status == 'completed' %}
-                                {% if order.order_type == 'qr_download' %}
-                                    <a href="#" class="btn btn-success btn-sm">
-                                        <i class="fas fa-download me-1"></i>Download
-                                    </a>
-                                {% else %}
-                                    <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#trackingModal{{ order.id }}">
-                                        <i class="fas fa-truck me-1"></i>Track Order
-                                    </button>
-                                {% endif %}
-                            {% endif %}
-                        </div>
-                    </div>
+                    <h4 class="fw-bold mt-2 text-white">PVC Smart Card</h4>
+                    <p class="text-white-50 small">Physical card + QR code</p>
                 </div>
-            </div>
-
-            <!-- Tracking Modal for Physical Orders -->
-            {% if order.order_type != 'qr_download' %}
-            <div class="modal fade" id="trackingModal{{ order.id }}" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Order Tracking</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="timeline">
-                                <div class="timeline-item completed">
-                                    <div class="timeline-marker bg-success"></div>
-                                    <div class="timeline-content">
-                                        <h6>Payment Received</h6>
-                                        <small class="text-muted">{{ order.created_at|date:"M d, Y g:i A" }}</small>
-                                    </div>
-                                </div>
-                                <div class="timeline-item {% if order.print_order.status == 'in_production' or order.print_order.status == 'printed' or order.print_order.status == 'shipped' or order.print_order.status == 'delivered' %}completed{% endif %}">
-                                    <div class="timeline-marker {% if order.print_order.status == 'in_production' or order.print_order.status == 'printed' or order.print_order.status == 'shipped' or order.print_order.status == 'delivered' %}bg-success{% else %}bg-secondary{% endif %}"></div>
-                                    <div class="timeline-content">
-                                        <h6>In Production</h6>
-                                        <small class="text-muted">Card is being prepared</small>
-                                    </div>
-                                </div>
-                                <div class="timeline-item {% if order.print_order.status == 'shipped' or order.print_order.status == 'delivered' %}completed{% endif %}">
-                                    <div class="timeline-marker {% if order.print_order.status == 'shipped' or order.print_order.status == 'delivered' %}bg-success{% else %}bg-secondary{% endif %}"></div>
-                                    <div class="timeline-content">
-                                        <h6>Shipped</h6>
-                                        <small class="text-muted">Card has been dispatched</small>
-                                    </div>
-                                </div>
-                                <div class="timeline-item {% if order.print_order.status == 'delivered' %}completed{% endif %}">
-                                    <div class="timeline-marker {% if order.print_order.status == 'delivered' %}bg-success{% else %}bg-secondary{% endif %}"></div>
-                                    <div class="timeline-content">
-                                        <h6>Delivered</h6>
-                                        <small class="text-muted">Card delivered to your address</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                {% elif order.order_type == 'nfc_card' %}
+                <div class="order-card-header bg-nfc-card position-relative">
+                    <div class="icon-circle">
+                        <i class="fas fa-wifi"></i>
                     </div>
+                    <h4 class="fw-bold mt-2 text-white">NFC Smart Card</h4>
+                    <p class="text-white-50 small">Tap to view technology</p>
                 </div>
-            </div>
-            {% endif %}
-            {% endfor %}
-        </div>
+                {% endif %}
 
-        <!-- Pagination -->
-        {% if page_obj.has_other_pages %}
-        <div class="row">
-            <div class="col-12">
-                <nav aria-label="Orders pagination">
-                    <ul class="pagination justify-content-center">
-                        {% if page_obj.has_previous %}
-                            <li class="page-item">
-                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                            </li>
-                        {% endif %}
-                        
-                        {% for num in page_obj.paginator.page_range %}
-                            {% if page_obj.number == num %}
-                                <li class="page-item active">
-                                    <span class="page-link">{{ num }}</span>
-                                </li>
-                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                                <li class="page-item">
-                                    <a class="page-link" href="?page={{ num }}">{{ num }}</a>
-                                </li>
+                <div class="card-body bg-white">
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><strong>Order:</strong>
+                             <span class="badge bg-success">Recived</span>
+                            <!-- {% if order.payment_status == 'pending' %}
+                                <span class="badge bg-warning text-dark">Submitted</span>
+                            {% elif order.payment_status == 'completed' %}
+                               
+                            {% elif order.payment_status == 'failed' %}
+                                <span class="badge bg-danger">Failed</span>
+                            {% else %}
+                                <span class="badge bg-secondary">{{ order.payment_status|capfirst }}</span>
+                            {% endif %} -->
+                        </li>
+                        <li class="mb-2"><strong>Delivery:</strong>
+                            {% if order.order_type == 'pvc_card' %}
+                                Within 7 working days
+                            {% elif order.order_type == 'nfc_card' %}
+                                Within 4-5 working days
                             {% endif %}
-                        {% endfor %}
-                        
-                        {% if page_obj.has_next %}
-                            <li class="page-item">
-                                <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
-                            </li>
-                        {% endif %}
+                        </li>
+                        <li><strong>Order Date:</strong> {{ order.created_at|date:"F d, Y" }}</li>
                     </ul>
-                </nav>
-            </div>
-        </div>
-        {% endif %}
+                </div>
 
-    {% else %}
-        <!-- No Orders -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body text-center py-5">
-                        <i class="fas fa-shopping-cart text-muted fa-4x mb-4"></i>
-                        <h4 class="fw-bold mb-3">No Orders Yet</h4>
-                        <p class="text-muted mb-4">You haven't placed any orders yet. Create a record and generate a QR code to get started.</p>
-                        <a href="{% url 'core:dashboard' %}" class="btn btn-primary btn-lg">
-                            <i class="fas fa-plus me-2"></i>Create First Record
-                        </a>
-                    </div>
+                <div class="card-footer bg-light border-0 text-center py-3">
+                    <a href="{% url 'core:order_detail' order_id=order.order_id %}" 
+                       class="btn btn-outline-primary btn-sm fw-semibold rounded-pill px-4">
+                        View Details
+                    </a>
                 </div>
             </div>
         </div>
+        {% empty %}
+        <div class="col-12 text-center py-5">
+            <i class="fas fa-credit-card text-muted fa-3x mb-3"></i>
+            <h5 class="text-muted">You have not ordered any cards yet.</h5>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if user_orders|length > 6 %}
+    <div class="text-center mt-4">
+        <button id="showMoreBtn" class="btn btn-primary fw-semibold px-5 py-2 rounded-pill shadow-sm">
+            Show More
+        </button>
+    </div>
     {% endif %}
 </div>
 
 <style>
-    .timeline {
-        position: relative;
-        margin: 20px 0;
-    }
-    
-    .timeline-item {
-        position: relative;
-        padding-left: 40px;
-        margin-bottom: 20px;
-    }
-    
-    .timeline-item:last-child {
-        margin-bottom: 0;
-    }
-    
-    .timeline-item::before {
-        content: '';
-        position: absolute;
-        left: 15px;
-        top: 30px;
-        height: calc(100% + 20px);
-        width: 2px;
-        background-color: #dee2e6;
-    }
-    
-    .timeline-item:last-child::before {
-        display: none;
-    }
-    
-    .timeline-marker {
-        position: absolute;
-        left: 10px;
-        top: 5px;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        border: 2px solid #fff;
-        box-shadow: 0 0 0 2px #dee2e6;
-    }
-    
-    .timeline-item.completed .timeline-marker {
-        box-shadow: 0 0 0 2px #198754;
-    }
+/* === General Card Styling === */
+.order-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.order-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* === Header Styles === */
+.order-card-header {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.icon-circle i {
+    font-size: 28px;
+    color: #fff;
+}
+.bg-pvc-card {
+    background: linear-gradient(135deg, #6c63ff, #5ab9f2);
+}
+.bg-nfc-card {
+    background: linear-gradient(135deg, #232526, #414345);
+}
+
+/* === Badge Styling === */
+.most-popular {
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffde59;
+    color: #262626;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 0.35rem 1rem;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* === Responsive === */
+@media (max-width: 992px) {
+    .order-card { max-width: 100%; }
+}
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const showMoreBtn = document.getElementById('showMoreBtn');
+    if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', function () {
+            document.querySelectorAll('.order-card-wrapper.d-none').forEach(card => {
+                card.classList.remove('d-none');
+            });
+            showMoreBtn.style.display = 'none';
+        });
+    }
+});
+</script>
 {% endblock %}

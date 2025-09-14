@@ -10,8 +10,12 @@ from io import BytesIO
 from django.core.files import File
 from PIL import Image
 import json
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
 
 User = get_user_model()
+
 
 def upload_to_user_folder(instance, filename):
     """Generate upload path for user files."""
@@ -169,6 +173,23 @@ class RTORecord(models.Model):
                 self.reviewed_at = timezone.now()
         super().save(*args, **kwargs)
 
+# core/models.py
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='core_profile')
+    phone = models.CharField(max_length=18, blank=True)
+    address = models.TextField(blank=True)
+    profile_picture = models.ImageField(upload_to='profiles/', blank=True, null=True)
+
+    def __str__(self):
+        return f"Profile for {self.user.email}"
+
+@receiver(post_save, sender=User)
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+    else:
+        instance.core_profile.save()
+        
 class Order(models.Model):
     """Order model for handling payments and delivery."""
     

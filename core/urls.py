@@ -47,6 +47,10 @@ urlpatterns = [
     # In your urls.py
     path('select-service/', views.select_service_view, name='select_service'),
     path('payment/', views.payment_view, name='payment'),
+    path('orders/<str:order_id>/', views.order_detail_view, name='order_detail'),
+
+    path('profile/edit/', views.edit_profile_view, name='edit_profile'),
+
 
     
 ]

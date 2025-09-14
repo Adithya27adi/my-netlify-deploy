@@ -55,7 +55,7 @@ class User(AbstractUser):
 
 class UserProfile(models.Model):
     """Extended user profile with additional information."""
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='auth_profile')
     address = models.TextField(blank=True)
     state = models.CharField(max_length=100, blank=True)
     pincode = models.CharField(max_length=10, blank=True)

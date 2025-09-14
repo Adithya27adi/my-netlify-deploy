@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Profile - RTO Management{% endblock %}
+
+{% block content %}
+
+<!-- Display Django messages -->
+{% if messages %}
+  <div class="container mt-3">
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white border-0 py-3">
+                    <h5 class="fw-bold mb-0">
+                        <i class="fas fa-edit text-primary me-2"></i>Edit Profile
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data" autocomplete="off">
+                        {% csrf_token %}
+
+                        <!-- Profile Picture -->
+                        <div class="mb-4 text-center">
+                            {% if profile.profile_picture %}
+                                <img src="{{ profile.profile_picture.url }}" alt="Profile" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                            {% else %}
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 100px; height: 100px;">
+                                    <i class="fas fa-user text-primary fa-3x"></i>
+                                </div>
+                            {% endif %}
+                            <div class="mt-2">
+                                <input type="file" name="profile_picture" accept="image/*" class="form-control form-control-sm" style="max-width: 220px; margin: 0 auto;">
+                            </div>
+                        </div>
+
+                        <!-- Profile Fields -->
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="text-muted small">First Name</label>
+                                <input type="text" name="first_name" class="form-control" value="{{ user.first_name|default:'' }}" placeholder="First Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="text-muted small">Email Address</label>
+                                <input type="email" name="email" class="form-control" value="{{ user.email }}" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="text-muted small">Phone Number</label>
+                                <input type="text" name="phone" class="form-control" value="{{ profile.phone|default:'' }}" placeholder="Phone Number">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="text-muted small">Date Joined</label>
+                                <input type="text" class="form-control" value="{{ user.date_joined|date:"F d, Y" }}" readonly>
+                            </div>
+                            <div class="col-12">
+                                <label class="text-muted small">Address</label>
+                                <input type="text" name="address" class="form-control" value="{{ profile.address|default:'' }}" placeholder="Your Full Address">
+                            </div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="mt-4 d-flex justify-content-between">
+                            <a href="{% url 'core:profile' %}" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-2"></i>Cancel
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i>Save Changes
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

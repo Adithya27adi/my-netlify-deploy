@@ -10,8 +10,8 @@
             <div class="card border-0 shadow-sm">
                 <div class="card-body text-center py-4">
                     <div class="mb-3">
-                        {% if user.profile_picture %}
-                            <img src="{{ user.profile_picture.url }}" alt="Profile" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                        {% if profile.profile_picture %}
+                            <img src="{{ profile.profile_picture.url }}" alt="Profile" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
                         {% else %}
                             <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 100px; height: 100px;">
                                 <i class="fas fa-user text-primary fa-3x"></i>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="col-md-6">
                             <label class="text-muted small">Phone Number</label>
-                            <p class="fw-semibold">{{ user.phone|default:"Not provided" }}</p>
+                            <p class="fw-semibold">{{ profile.phone|default:"Not provided" }}</p>
                         </div>
                         <div class="col-md-6">
                             <label class="text-muted small">Date Joined</label>
@@ -55,52 +55,7 @@
                         </div>
                         <div class="col-12">
                             <label class="text-muted small">Address</label>
-                            <p class="fw-semibold">{{ user.address|default:"Not provided" }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Account Statistics -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card border-0 shadow-sm">
-                <div class="card-header bg-white border-0 py-3">
-                    <h5 class="fw-bold mb-0">
-                        <i class="fas fa-chart-bar text-success me-2"></i>Account Statistics
-                    </h5>
-                </div>
-                <div class="card-body">
-                    <div class="row g-3">
-                        <div class="col-md-3 text-center">
-                            <div class="bg-primary bg-opacity-10 rounded p-3 mb-2">
-                                <i class="fas fa-file-alt text-primary fa-2x"></i>
-                            </div>
-                            <h4 class="fw-bold">{{ user.rto_records.count }}</h4>
-                            <p class="text-muted small mb-0">Total Records</p>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <div class="bg-success bg-opacity-10 rounded p-3 mb-2">
-                                <i class="fas fa-check-circle text-success fa-2x"></i>
-                            </div>
-                            <h4 class="fw-bold">{{ user.rto_records.filter_status_approved.count }}</h4>
-                            <p class="text-muted small mb-0">Approved Records</p>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <div class="bg-info bg-opacity-10 rounded p-3 mb-2">
-                                <i class="fas fa-shopping-cart text-info fa-2x"></i>
-                            </div>
-                            <h4 class="fw-bold">{{ user.orders.count }}</h4>
-                            <p class="text-muted small mb-0">Total Orders</p>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <div class="bg-warning bg-opacity-10 rounded p-3 mb-2">
-                                <i class="fas fa-rupee-sign text-warning fa-2x"></i>
-                            </div>
-                            <h4 class="fw-bold">₹{% widthratio user.orders.aggregate_total_amount.total_amount__sum 1 1 %}</h4>
-                            <p class="text-muted small mb-0">Total Spent</p>
+                            <p class="fw-semibold">{{ profile.address|default:"Not provided" }}</p>
                         </div>
                     </div>
                 </div>
@@ -120,7 +75,7 @@
                 <div class="card-body">
                     <div class="row g-3">
                         <div class="col-md-4">
-                            <a href="{% url 'core:create_record' 'rto' %}" class="btn btn-outline-primary w-100">
+                            <a href="{% url 'core:dashboard' %}" class="btn btn-outline-primary w-100">
                                 <i class="fas fa-plus me-2"></i>Create New Record
                             </a>
                         </div>

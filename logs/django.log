@@ -3296,3 +3296,1051 @@ INFO 2025-09-12 14:43:54,513 basehttp 6648 135325397546688 "POST /ajax/verify-pa
 INFO 2025-09-12 14:43:54,574 basehttp 6648 135325397546688 "GET /qr-success/9658e5c5-a192-4d56-828e-86aa1ac61abb/ HTTP/1.1" 200 11888
 INFO 2025-09-12 14:43:54,675 basehttp 6648 135325397546688 "GET /media/qr_codes/qr_9658e5c5-a192-4d56-828e-86aa1ac61abb.png HTTP/1.1" 200 1009
 INFO 2025-09-12 14:54:30,528 basehttp 6648 135325397546688 "GET /dashboard/ HTTP/1.1" 200 39850
+INFO 2025-09-12 14:57:40,608 autoreload 7543 124998755393664 Watching for file changes with StatReloader
+INFO 2025-09-12 15:01:13,994 autoreload 7543 124998755393664 /home/adithya/Desktop/rto1orginal/core/urls.py changed, reloading.
+INFO 2025-09-12 15:01:14,379 autoreload 7684 136408774418560 Watching for file changes with StatReloader
+INFO 2025-09-12 15:02:16,417 basehttp 7684 136408610109120 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 15:40:29,119 autoreload 7684 136408774418560 /home/adithya/Desktop/rto1orginal/rto_project/settings/base.py changed, reloading.
+INFO 2025-09-12 15:40:29,613 autoreload 8573 140067950866560 Watching for file changes with StatReloader
+INFO 2025-09-12 15:40:30,986 autoreload 8573 140067950866560 /home/adithya/Desktop/rto1orginal/rto_project/settings/base.py changed, reloading.
+INFO 2025-09-12 15:40:31,357 autoreload 8595 134468103291008 Watching for file changes with StatReloader
+INFO 2025-09-12 15:59:22,621 autoreload 9021 130673297555584 Watching for file changes with StatReloader
+INFO 2025-09-12 16:01:03,630 autoreload 9021 130673297555584 /home/adithya/Desktop/rto1orginal/templates/core/utils/email_utils.py changed, reloading.
+INFO 2025-09-12 16:01:03,981 autoreload 9115 132182586613888 Watching for file changes with StatReloader
+INFO 2025-09-12 16:01:13,517 autoreload 9115 132182586613888 /home/adithya/Desktop/rto1orginal/templates/core/utils/email_utils.py changed, reloading.
+INFO 2025-09-12 16:01:13,872 autoreload 9162 136527875698816 Watching for file changes with StatReloader
+INFO 2025-09-12 16:01:15,195 autoreload 9162 136527875698816 /home/adithya/Desktop/rto1orginal/templates/core/utils/email_utils.py changed, reloading.
+INFO 2025-09-12 16:01:15,548 autoreload 9177 130475943518336 Watching for file changes with StatReloader
+INFO 2025-09-12 16:35:33,937 autoreload 10024 125147127484544 Watching for file changes with StatReloader
+INFO 2025-09-12 16:37:26,564 basehttp 10024 125147034941120 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 16:37:30,862 basehttp 10024 125147034941120 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 16:37:34,062 basehttp 10024 125147034941120 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 16:37:37,879 basehttp 10024 125147034941120 "GET /dashboard/ HTTP/1.1" 200 39850
+INFO 2025-09-12 16:37:39,669 basehttp 10024 125147034941120 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 16:37:50,565 basehttp 10024 125147034941120 "GET /records/create/rto/?service=qr&price=2&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 16:37:57,559 basehttp 10024 125147034941120 "GET /dashboard/ HTTP/1.1" 200 39850
+INFO 2025-09-12 16:37:58,984 basehttp 10024 125147034941120 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 16:38:01,257 basehttp 10024 125147034941120 "GET /dashboard/ HTTP/1.1" 200 39850
+INFO 2025-09-12 16:38:02,679 basehttp 10024 125147034941120 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 16:38:08,205 basehttp 10024 125147034941120 "GET /dashboard/ HTTP/1.1" 200 39850
+INFO 2025-09-12 16:38:10,127 basehttp 10024 125147034941120 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 16:38:12,641 basehttp 10024 125147034941120 "GET /records/create/rto/?service=qr&price=2&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 16:38:16,474 basehttp 10024 125147034941120 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 16:38:19,017 basehttp 10024 125147034941120 "GET /records/create/rto/?service=qr&price=2&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 16:38:23,426 basehttp 10024 125147034941120 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 16:38:26,330 basehttp 10024 125147034941120 "GET /records/create/rto/?service=qr&price=2&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 16:38:32,231 basehttp 10024 125147034941120 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 16:38:35,311 basehttp 10024 125147034941120 "GET /records/create/rto/?service=pvc&price=100&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 16:39:26,521 autoreload 10024 125147127484544 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 16:39:27,033 autoreload 10369 139388773982336 Watching for file changes with StatReloader
+INFO 2025-09-12 16:39:28,550 autoreload 10369 139388773982336 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 16:39:29,023 autoreload 10391 131911701250176 Watching for file changes with StatReloader
+INFO 2025-09-12 16:39:35,624 autoreload 10391 131911701250176 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 16:39:36,080 autoreload 10419 137532359286912 Watching for file changes with StatReloader
+INFO 2025-09-12 16:39:37,500 autoreload 10419 137532359286912 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 16:39:37,966 autoreload 10433 137295635710080 Watching for file changes with StatReloader
+INFO 2025-09-12 16:40:40,865 autoreload 10433 137295635710080 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 16:40:41,352 autoreload 10478 134627902263424 Watching for file changes with StatReloader
+INFO 2025-09-12 16:40:42,761 autoreload 10478 134627902263424 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 16:40:43,218 autoreload 10493 130033195921536 Watching for file changes with StatReloader
+INFO 2025-09-12 16:40:52,959 autoreload 10493 130033195921536 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 16:40:53,428 autoreload 10528 133813817589888 Watching for file changes with StatReloader
+INFO 2025-09-12 16:44:28,629 autoreload 10679 139627262201984 Watching for file changes with StatReloader
+INFO 2025-09-12 16:44:32,524 basehttp 10679 139627100894912 "GET / HTTP/1.1" 302 0
+INFO 2025-09-12 16:44:32,565 basehttp 10679 139627100894912 "GET /dashboard/ HTTP/1.1" 200 39850
+INFO 2025-09-12 16:44:38,939 basehttp 10679 139627100894912 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 16:44:41,888 basehttp 10679 139627100894912 "GET /records/create/rto/?service=pvc&price=100&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 16:45:14,869 basehttp 10679 139627100894912 "POST /ajax/create-record/ HTTP/1.1" 200 82
+INFO 2025-09-12 16:45:15,230 basehttp 10679 139627100894912 "GET /records/1d172ceb-91ed-4a58-baf0-60dcf261922b/payment/pvc_card/ HTTP/1.1" 200 11128
+INFO 2025-09-12 16:45:45,530 basehttp 10679 139627100894912 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+INFO 2025-09-12 16:45:45,576 basehttp 10679 139627100894912 "GET /qr-success/1d172ceb-91ed-4a58-baf0-60dcf261922b/ HTTP/1.1" 200 11888
+INFO 2025-09-12 16:45:45,664 basehttp 10679 139627100894912 "GET /media/qr_codes/qr_1d172ceb-91ed-4a58-baf0-60dcf261922b.png HTTP/1.1" 200 947
+ERROR 2025-09-12 16:49:18,914 log 10679 139627100894912 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/core/views.py", line 582, in orders_view
+    return render(request, 'orders.html', {'orders': orders})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: orders.html
+ERROR 2025-09-12 16:49:18,915 basehttp 10679 139627100894912 "GET /orders/ HTTP/1.1" 500 104739
+INFO 2025-09-12 16:49:23,265 basehttp 10679 139627100894912 "GET /dashboard/ HTTP/1.1" 200 40168
+INFO 2025-09-12 17:00:49,537 autoreload 10679 139627262201984 /home/adithya/Desktop/rto1orginal/rto_project/settings/development.py changed, reloading.
+INFO 2025-09-12 17:02:53,544 autoreload 11501 136787124183168 Watching for file changes with StatReloader
+INFO 2025-09-12 17:02:58,787 basehttp 11501 136786961495744 "GET / HTTP/1.1" 302 0
+INFO 2025-09-12 17:02:58,815 basehttp 11501 136786961495744 "GET /dashboard/ HTTP/1.1" 200 40168
+INFO 2025-09-12 17:03:09,420 basehttp 11501 136786961495744 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 17:03:12,726 basehttp 11501 136786961495744 "GET /records/create/rto/?service=pvc&price=100&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 17:03:43,244 basehttp 11501 136786961495744 "POST /ajax/create-record/ HTTP/1.1" 200 82
+INFO 2025-09-12 17:03:43,793 basehttp 11501 136786961495744 "GET /records/adca9019-a884-468e-82b0-f72ffeffc4d0/payment/pvc_card/ HTTP/1.1" 200 11128
+INFO 2025-09-12 17:04:16,084 basehttp 11501 136786961495744 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+INFO 2025-09-12 17:04:16,145 basehttp 11501 136786961495744 "GET /qr-success/adca9019-a884-468e-82b0-f72ffeffc4d0/ HTTP/1.1" 200 11888
+INFO 2025-09-12 17:04:16,234 basehttp 11501 136786961495744 "GET /media/qr_codes/qr_adca9019-a884-468e-82b0-f72ffeffc4d0.png HTTP/1.1" 200 966
+WARNING 2025-09-12 17:05:38,100 log 11501 136786961495744 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-12 17:05:38,100 basehttp 11501 136786961495744 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7781
+INFO 2025-09-12 17:10:12,635 autoreload 11501 136787124183168 /home/adithya/Desktop/rto1orginal/rto_project/settings/development.py changed, reloading.
+INFO 2025-09-12 17:10:13,203 autoreload 12035 125798243180672 Watching for file changes with StatReloader
+INFO 2025-09-12 17:10:14,636 autoreload 12035 125798243180672 /home/adithya/Desktop/rto1orginal/rto_project/settings/development.py changed, reloading.
+INFO 2025-09-12 17:10:15,110 autoreload 12056 130376656760960 Watching for file changes with StatReloader
+INFO 2025-09-12 17:10:16,612 autoreload 12056 130376656760960 /home/adithya/Desktop/rto1orginal/rto_project/settings/development.py changed, reloading.
+INFO 2025-09-12 17:10:17,053 autoreload 12060 138616722456704 Watching for file changes with StatReloader
+INFO 2025-09-12 17:24:31,357 autoreload 12408 128456332791936 Watching for file changes with StatReloader
+INFO 2025-09-12 17:24:34,407 basehttp 12408 128456240133824 "GET / HTTP/1.1" 302 0
+INFO 2025-09-12 17:24:34,458 basehttp 12408 128456240133824 "GET /dashboard/ HTTP/1.1" 200 40486
+INFO 2025-09-12 17:24:39,989 basehttp 12408 128456240133824 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 17:24:43,043 basehttp 12408 128456240133824 "GET /records/create/rto/?service=pvc&price=100&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 17:25:09,059 basehttp 12408 128456240133824 "POST /ajax/create-record/ HTTP/1.1" 200 82
+INFO 2025-09-12 17:25:10,106 basehttp 12408 128456240133824 "GET /records/a5a9075f-4dd0-464c-a76e-688480e33913/payment/pvc_card/ HTTP/1.1" 200 11128
+INFO 2025-09-12 17:25:45,535 basehttp 12408 128456240133824 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+INFO 2025-09-12 17:25:45,575 basehttp 12408 128456240133824 "GET /qr-success/a5a9075f-4dd0-464c-a76e-688480e33913/ HTTP/1.1" 200 11888
+INFO 2025-09-12 17:25:45,666 basehttp 12408 128456240133824 "GET /media/qr_codes/qr_a5a9075f-4dd0-464c-a76e-688480e33913.png HTTP/1.1" 200 978
+INFO 2025-09-12 17:41:51,524 autoreload 13032 127213887275136 Watching for file changes with StatReloader
+INFO 2025-09-12 17:41:55,036 basehttp 13032 127213793965760 "GET /qr-success/a5a9075f-4dd0-464c-a76e-688480e33913/ HTTP/1.1" 200 12170
+INFO 2025-09-12 17:41:55,090 basehttp 13032 127213793965760 "GET /media/qr_codes/qr_a5a9075f-4dd0-464c-a76e-688480e33913.png HTTP/1.1" 304 0
+INFO 2025-09-12 17:55:53,323 autoreload 13032 127213887275136 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 17:55:53,840 autoreload 13335 125844143915136 Watching for file changes with StatReloader
+INFO 2025-09-12 17:56:02,300 autoreload 13335 125844143915136 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 17:56:02,808 autoreload 13381 128677574017152 Watching for file changes with StatReloader
+INFO 2025-09-12 17:56:15,548 autoreload 13381 128677574017152 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 17:56:16,043 autoreload 13408 133565314855040 Watching for file changes with StatReloader
+INFO 2025-09-12 17:56:29,847 autoreload 13408 133565314855040 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 17:56:30,348 autoreload 13454 131422990487680 Watching for file changes with StatReloader
+INFO 2025-09-12 17:56:33,853 autoreload 13454 131422990487680 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 17:56:34,392 autoreload 13481 137666119307392 Watching for file changes with StatReloader
+INFO 2025-09-12 17:56:45,057 autoreload 13481 137666119307392 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 17:56:45,575 autoreload 13510 126542356107392 Watching for file changes with StatReloader
+INFO 2025-09-12 17:57:49,585 autoreload 13510 126542356107392 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 17:57:50,030 autoreload 13565 137859222184064 Watching for file changes with StatReloader
+INFO 2025-09-12 17:58:27,451 autoreload 13565 137859222184064 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 17:58:27,917 autoreload 13616 136178382143616 Watching for file changes with StatReloader
+INFO 2025-09-12 17:58:35,433 autoreload 13616 136178382143616 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 17:58:35,898 autoreload 13662 138354694537344 Watching for file changes with StatReloader
+INFO 2025-09-12 17:59:01,846 autoreload 13662 138354694537344 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 17:59:02,396 autoreload 13695 126146654326912 Watching for file changes with StatReloader
+INFO 2025-09-12 17:59:03,894 autoreload 13695 126146654326912 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 17:59:04,356 autoreload 13716 130939423424640 Watching for file changes with StatReloader
+INFO 2025-09-12 17:59:05,797 autoreload 13716 130939423424640 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 17:59:06,235 autoreload 13719 138826798395520 Watching for file changes with StatReloader
+INFO 2025-09-12 17:59:08,663 autoreload 13719 138826798395520 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 17:59:09,138 autoreload 13739 127758629331072 Watching for file changes with StatReloader
+INFO 2025-09-12 17:59:23,658 autoreload 13787 130201875579008 Watching for file changes with StatReloader
+INFO 2025-09-12 17:59:27,067 basehttp 13787 130201711277760 "GET / HTTP/1.1" 302 0
+INFO 2025-09-12 17:59:27,110 basehttp 13787 130201711277760 "GET /dashboard/ HTTP/1.1" 200 40486
+INFO 2025-09-12 17:59:39,439 basehttp 13787 130201711277760 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 17:59:43,120 basehttp 13787 130201711277760 "GET /records/create/rto/?service=nfc&price=400&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 18:00:22,036 basehttp 13787 130201711277760 "POST /ajax/create-record/ HTTP/1.1" 200 82
+INFO 2025-09-12 18:00:22,415 basehttp 13787 130201711277760 "GET /records/43d1109c-3f84-40db-9cfb-2d7250e7825d/payment/nfc_card/ HTTP/1.1" 200 11119
+INFO 2025-09-12 18:01:00,931 basehttp 13787 130201711277760 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+ERROR 2025-09-12 18:01:01,018 log 13787 130201711277760 Internal Server Error: /qr-success/43d1109c-3f84-40db-9cfb-2d7250e7825d/
+Traceback (most recent call last):
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/core/views.py", line 524, in qr_success_view
+    record = get_object_or_404(Record, id=record_id)
+                               ^^^^^^
+NameError: name 'Record' is not defined
+ERROR 2025-09-12 18:01:01,022 basehttp 13787 130201711277760 "GET /qr-success/43d1109c-3f84-40db-9cfb-2d7250e7825d/ HTTP/1.1" 500 79709
+INFO 2025-09-12 18:04:41,901 autoreload 13787 130201875579008 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 18:04:42,409 autoreload 14289 129888090517632 Watching for file changes with StatReloader
+INFO 2025-09-12 18:04:50,041 autoreload 14289 129888090517632 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 18:04:50,541 autoreload 14334 129387356696704 Watching for file changes with StatReloader
+INFO 2025-09-12 18:04:59,144 autoreload 14334 129387356696704 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 18:04:59,640 autoreload 14361 132139543548032 Watching for file changes with StatReloader
+INFO 2025-09-12 18:05:03,191 autoreload 14361 132139543548032 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 18:05:03,748 autoreload 14393 134618996572288 Watching for file changes with StatReloader
+INFO 2025-09-12 18:05:09,429 autoreload 14436 129384833409152 Watching for file changes with StatReloader
+INFO 2025-09-12 18:05:21,460 basehttp 14436 129384669247168 "GET / HTTP/1.1" 302 0
+INFO 2025-09-12 18:05:21,489 basehttp 14436 129384669247168 "GET /dashboard/ HTTP/1.1" 200 40486
+INFO 2025-09-12 18:05:29,843 basehttp 14436 129384669247168 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 18:05:32,414 basehttp 14436 129384669247168 "GET /records/create/rto/?service=nfc&price=400&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 18:06:11,283 basehttp 14436 129384669247168 "POST /ajax/create-record/ HTTP/1.1" 200 82
+INFO 2025-09-12 18:06:12,942 basehttp 14436 129384669247168 "GET /records/99af8c6d-be73-4fbe-9ea1-b82cd27f1c79/payment/nfc_card/ HTTP/1.1" 200 11119
+INFO 2025-09-12 18:06:52,863 basehttp 14436 129384669247168 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+INFO 2025-09-12 18:06:52,920 basehttp 14436 129384669247168 "GET /qr-success/99af8c6d-be73-4fbe-9ea1-b82cd27f1c79/ HTTP/1.1" 200 14185
+INFO 2025-09-12 18:06:52,999 basehttp 14436 129384669247168 "GET /media/qr_codes/qr_99af8c6d-be73-4fbe-9ea1-b82cd27f1c79.png HTTP/1.1" 200 962
+INFO 2025-09-12 18:09:27,326 basehttp 14436 129384669247168 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 18:09:29,656 basehttp 14436 129384669247168 "GET /dashboard/ HTTP/1.1" 200 40486
+INFO 2025-09-12 18:10:09,519 basehttp 14436 129384669247168 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 18:10:12,009 basehttp 14436 129384669247168 "GET /records/create/rto/?service=pvc&price=100&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 18:10:37,602 basehttp 14436 129384669247168 "POST /ajax/create-record/ HTTP/1.1" 200 82
+INFO 2025-09-12 18:10:38,335 basehttp 14436 129384669247168 "GET /records/06c1ea0c-d12b-4619-9c57-b50c0cd85085/payment/pvc_card/ HTTP/1.1" 200 11128
+INFO 2025-09-12 18:11:15,690 basehttp 14436 129384669247168 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+INFO 2025-09-12 18:11:15,750 basehttp 14436 129384669247168 "GET /qr-success/06c1ea0c-d12b-4619-9c57-b50c0cd85085/ HTTP/1.1" 200 14179
+INFO 2025-09-12 18:11:15,845 basehttp 14436 129384669247168 "GET /media/qr_codes/qr_06c1ea0c-d12b-4619-9c57-b50c0cd85085.png HTTP/1.1" 200 929
+INFO 2025-09-12 18:13:14,838 basehttp 14436 129384669247168 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 18:13:18,016 basehttp 14436 129384669247168 "GET /records/create/rto/?service=nfc&price=400&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 18:13:39,475 basehttp 14436 129384669247168 "POST /ajax/create-record/ HTTP/1.1" 200 82
+INFO 2025-09-12 18:13:40,734 basehttp 14436 129384669247168 "GET /records/37039aa0-c3cb-4432-99aa-b0e46474ee1b/payment/nfc_card/ HTTP/1.1" 200 11119
+INFO 2025-09-12 18:14:13,329 basehttp 14436 129384669247168 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+INFO 2025-09-12 18:14:13,374 basehttp 14436 129384669247168 "GET /qr-success/37039aa0-c3cb-4432-99aa-b0e46474ee1b/ HTTP/1.1" 200 14179
+INFO 2025-09-12 18:14:13,469 basehttp 14436 129384669247168 "GET /media/qr_codes/qr_37039aa0-c3cb-4432-99aa-b0e46474ee1b.png HTTP/1.1" 200 994
+INFO 2025-09-12 18:16:24,366 autoreload 14436 129384833409152 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 18:16:24,852 autoreload 15388 132000022630528 Watching for file changes with StatReloader
+INFO 2025-09-12 22:01:19,508 autoreload 4808 137988690755712 Watching for file changes with StatReloader
+INFO 2025-09-12 22:01:23,926 basehttp 4808 137988597085888 "GET / HTTP/1.1" 302 0
+INFO 2025-09-12 22:01:23,965 basehttp 4808 137988597085888 "GET /dashboard/ HTTP/1.1" 200 40486
+WARNING 2025-09-12 22:01:24,297 log 4808 137988597085888 Not Found: /favicon.ico
+WARNING 2025-09-12 22:01:24,297 basehttp 4808 137988597085888 "GET /favicon.ico HTTP/1.1" 404 7670
+INFO 2025-09-12 22:02:05,566 basehttp 4808 137988597085888 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 22:02:22,421 basehttp 4808 137988597085888 "GET /records/create/rto/?service=pvc&price=100&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 22:03:26,699 basehttp 4808 137988597085888 "POST /ajax/create-record/ HTTP/1.1" 200 82
+INFO 2025-09-12 22:03:27,230 basehttp 4808 137988597085888 "GET /records/4de455d3-d441-4b8f-a8c5-554169f99954/payment/pvc_card/ HTTP/1.1" 200 11128
+INFO 2025-09-12 22:04:13,447 basehttp 4808 137988597085888 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+INFO 2025-09-12 22:04:13,496 basehttp 4808 137988597085888 "GET /qr-success/4de455d3-d441-4b8f-a8c5-554169f99954/ HTTP/1.1" 200 14180
+INFO 2025-09-12 22:04:13,610 basehttp 4808 137988597085888 "GET /media/qr_codes/qr_4de455d3-d441-4b8f-a8c5-554169f99954.png HTTP/1.1" 200 973
+INFO 2025-09-12 22:13:11,047 autoreload 4808 137988690755712 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 22:13:11,741 autoreload 5661 123486486499456 Watching for file changes with StatReloader
+INFO 2025-09-12 22:13:13,309 autoreload 5661 123486486499456 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 22:13:13,756 autoreload 5690 135289565712512 Watching for file changes with StatReloader
+INFO 2025-09-12 22:14:28,149 autoreload 5690 135289565712512 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 22:14:28,619 autoreload 5727 129003976528000 Watching for file changes with StatReloader
+INFO 2025-09-12 22:14:35,069 autoreload 5727 129003976528000 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 22:14:35,531 autoreload 5766 138380483457152 Watching for file changes with StatReloader
+INFO 2025-09-12 22:14:51,138 autoreload 5766 138380483457152 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 22:14:51,612 autoreload 5802 130672546041984 Watching for file changes with StatReloader
+INFO 2025-09-12 22:14:58,026 autoreload 5802 130672546041984 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 22:14:58,483 autoreload 5841 129781873918080 Watching for file changes with StatReloader
+INFO 2025-09-12 22:15:00,798 autoreload 5841 129781873918080 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 22:15:01,312 autoreload 5859 124626906169472 Watching for file changes with StatReloader
+INFO 2025-09-12 22:16:12,504 autoreload 5859 124626906169472 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 22:16:12,983 autoreload 5921 138213415739520 Watching for file changes with StatReloader
+INFO 2025-09-12 22:16:14,546 autoreload 5921 138213415739520 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 22:16:14,974 autoreload 5942 137131685257344 Watching for file changes with StatReloader
+INFO 2025-09-12 22:16:26,642 autoreload 5942 137131685257344 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 22:16:27,116 autoreload 5970 124881852301440 Watching for file changes with StatReloader
+INFO 2025-09-12 22:19:30,207 autoreload 5970 124881852301440 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-12 22:19:30,714 autoreload 6042 138638199193728 Watching for file changes with StatReloader
+INFO 2025-09-12 22:19:32,124 autoreload 6042 138638199193728 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-12 22:19:32,588 autoreload 6062 138119599550592 Watching for file changes with StatReloader
+INFO 2025-09-12 22:19:39,188 autoreload 6062 138119599550592 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-12 22:19:39,700 autoreload 6097 129451609477248 Watching for file changes with StatReloader
+INFO 2025-09-12 22:37:09,857 autoreload 6821 132376909222016 Watching for file changes with StatReloader
+INFO 2025-09-12 22:37:58,541 autoreload 6821 132376909222016 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 22:37:59,043 autoreload 6875 128450790432896 Watching for file changes with StatReloader
+INFO 2025-09-12 22:38:00,498 autoreload 6875 128450790432896 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 22:38:00,949 autoreload 6902 138517632295040 Watching for file changes with StatReloader
+INFO 2025-09-12 22:48:38,579 autoreload 6902 138517632295040 /home/adithya/Desktop/rto1orginal/core/utils/email_utils.py changed, reloading.
+INFO 2025-09-12 22:48:39,117 autoreload 7042 124203147534464 Watching for file changes with StatReloader
+INFO 2025-09-12 22:52:43,416 autoreload 7167 123269731524736 Watching for file changes with StatReloader
+INFO 2025-09-12 22:52:46,611 basehttp 7167 123269566953152 "GET / HTTP/1.1" 302 0
+INFO 2025-09-12 22:52:46,645 basehttp 7167 123269566953152 "GET /dashboard/ HTTP/1.1" 200 40486
+INFO 2025-09-12 22:52:51,853 basehttp 7167 123269566953152 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 22:52:54,428 basehttp 7167 123269566953152 "GET /records/create/rto/?service=nfc&price=400&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 22:53:22,769 basehttp 7167 123269566953152 "POST /ajax/create-record/ HTTP/1.1" 200 82
+INFO 2025-09-12 22:53:25,037 basehttp 7167 123269566953152 "GET /records/59dc7987-eb83-41ee-8998-ba416d0e9ef1/payment/nfc_card/ HTTP/1.1" 200 11119
+INFO 2025-09-12 22:53:59,336 basehttp 7167 123269566953152 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+INFO 2025-09-12 22:53:59,398 basehttp 7167 123269566953152 "GET /qr-success/59dc7987-eb83-41ee-8998-ba416d0e9ef1/ HTTP/1.1" 200 13724
+INFO 2025-09-12 22:53:59,474 basehttp 7167 123269566953152 "GET /media/qr_codes/qr_59dc7987-eb83-41ee-8998-ba416d0e9ef1.png HTTP/1.1" 200 957
+INFO 2025-09-12 22:55:50,542 basehttp 7167 123269566953152 "GET /qr-success/59dc7987-eb83-41ee-8998-ba416d0e9ef1/ HTTP/1.1" 200 11590
+INFO 2025-09-12 22:55:50,607 basehttp 7167 123269566953152 "GET /media/qr_codes/qr_59dc7987-eb83-41ee-8998-ba416d0e9ef1.png HTTP/1.1" 304 0
+INFO 2025-09-12 22:57:58,929 basehttp 7167 123269566953152 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 22:58:03,665 basehttp 7167 123269566953152 "GET /records/create/rto/?service=qr&price=2&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 22:58:22,694 basehttp 7167 123269566953152 "POST /ajax/create-record/ HTTP/1.1" 200 85
+INFO 2025-09-12 22:58:23,122 basehttp 7167 123269566953152 "GET /records/59d62043-dcfa-407d-a4b1-485238466b12/payment/qr_download/ HTTP/1.1" 200 11120
+INFO 2025-09-12 22:58:51,460 basehttp 7167 123269566953152 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+INFO 2025-09-12 22:58:51,502 basehttp 7167 123269566953152 "GET /qr-success/59d62043-dcfa-407d-a4b1-485238466b12/ HTTP/1.1" 200 11590
+INFO 2025-09-12 22:58:51,593 basehttp 7167 123269566953152 "GET /media/qr_codes/qr_59d62043-dcfa-407d-a4b1-485238466b12.png HTTP/1.1" 200 996
+INFO 2025-09-12 22:59:49,152 basehttp 7167 123269566953152 "GET /dashboard/ HTTP/1.1" 200 40486
+INFO 2025-09-12 23:09:52,743 autoreload 7167 123269731524736 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:09:53,266 autoreload 8329 128236142542976 Watching for file changes with StatReloader
+INFO 2025-09-12 23:09:55,701 autoreload 8329 128236142542976 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:09:56,201 autoreload 8358 135898246910080 Watching for file changes with StatReloader
+INFO 2025-09-12 23:17:02,754 autoreload 8358 135898246910080 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:17:03,213 autoreload 8478 126102557655168 Watching for file changes with StatReloader
+INFO 2025-09-12 23:17:07,696 autoreload 8478 126102557655168 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:17:08,173 autoreload 8508 138635188088960 Watching for file changes with StatReloader
+INFO 2025-09-12 23:18:27,696 autoreload 8508 138635188088960 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:18:28,172 autoreload 8561 139198750355584 Watching for file changes with StatReloader
+INFO 2025-09-12 23:18:30,668 autoreload 8561 139198750355584 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:18:31,134 autoreload 8588 135463533465728 Watching for file changes with StatReloader
+INFO 2025-09-12 23:18:32,604 autoreload 8588 135463533465728 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:18:33,007 autoreload 8591 130873093578880 Watching for file changes with StatReloader
+INFO 2025-09-12 23:18:36,566 autoreload 8591 130873093578880 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:18:36,992 autoreload 8618 131554742734976 Watching for file changes with StatReloader
+INFO 2025-09-12 23:19:22,424 autoreload 8618 131554742734976 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:19:22,866 autoreload 8652 130595063255168 Watching for file changes with StatReloader
+INFO 2025-09-12 23:19:26,352 autoreload 8652 130595063255168 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:19:26,827 autoreload 8679 124040309399680 Watching for file changes with StatReloader
+INFO 2025-09-12 23:20:21,623 autoreload 8679 124040309399680 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:20:22,098 autoreload 8715 132726297133184 Watching for file changes with StatReloader
+INFO 2025-09-12 23:20:25,564 autoreload 8715 132726297133184 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:20:26,062 autoreload 8744 135554940723328 Watching for file changes with StatReloader
+INFO 2025-09-12 23:20:28,566 autoreload 8744 135554940723328 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:20:29,050 autoreload 8771 127784821305472 Watching for file changes with StatReloader
+INFO 2025-09-12 23:21:00,287 autoreload 8771 127784821305472 /home/adithya/Desktop/rto1orginal/core/urls.py changed, reloading.
+INFO 2025-09-12 23:21:00,743 autoreload 8812 125674421858432 Watching for file changes with StatReloader
+INFO 2025-09-12 23:21:05,280 autoreload 8812 125674421858432 /home/adithya/Desktop/rto1orginal/core/urls.py changed, reloading.
+INFO 2025-09-12 23:21:05,710 autoreload 8840 137663990923392 Watching for file changes with StatReloader
+INFO 2025-09-12 23:23:05,782 autoreload 8921 136625397575808 Watching for file changes with StatReloader
+INFO 2025-09-12 23:23:09,580 basehttp 8921 136625233327808 "GET / HTTP/1.1" 302 0
+INFO 2025-09-12 23:23:09,614 basehttp 8921 136625233327808 "GET /dashboard/ HTTP/1.1" 200 52132
+INFO 2025-09-12 23:23:41,863 basehttp 8921 136625233327808 "GET /orders/order_RGly0s4REFLktP/ HTTP/1.1" 200 6746
+INFO 2025-09-12 23:23:41,932 basehttp 8921 136625233327808 "GET /media/qr_codes/qr_59d62043-dcfa-407d-a4b1-485238466b12.png HTTP/1.1" 304 0
+INFO 2025-09-12 23:24:09,491 basehttp 8921 136625233327808 "GET /dashboard/ HTTP/1.1" 200 52132
+INFO 2025-09-12 23:24:21,608 basehttp 8921 136625233327808 "GET /orders/order_RGlsl0auokEBkU/ HTTP/1.1" 200 6770
+INFO 2025-09-12 23:24:21,671 basehttp 8921 136625233327808 "GET /media/qr_codes/qr_59dc7987-eb83-41ee-8998-ba416d0e9ef1.png HTTP/1.1" 304 0
+ERROR 2025-09-12 23:24:42,946 log 8921 136625233327808 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/core/views.py", line 610, in orders_view
+    return render(request, 'orders.html', {'orders': orders})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: orders.html
+ERROR 2025-09-12 23:24:42,948 basehttp 8921 136625233327808 "GET /orders/ HTTP/1.1" 500 104632
+INFO 2025-09-12 23:24:46,773 basehttp 8921 136625233327808 "GET /dashboard/ HTTP/1.1" 200 52132
+INFO 2025-09-12 23:24:50,324 basehttp 8921 136625233327808 "GET /select-service/ HTTP/1.1" 200 18099
+INFO 2025-09-12 23:24:57,215 basehttp 8921 136625233327808 "GET /records/create/rto/?service=pvc&price=100&type=RTO HTTP/1.1" 200 14972
+INFO 2025-09-12 23:25:42,461 basehttp 8921 136625233327808 "POST /ajax/create-record/ HTTP/1.1" 200 82
+INFO 2025-09-12 23:25:43,957 basehttp 8921 136625233327808 "GET /records/5edb5979-109c-4ab7-a91e-cded3d9ce097/payment/pvc_card/ HTTP/1.1" 200 11126
+INFO 2025-09-12 23:26:19,564 basehttp 8921 136625233327808 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+INFO 2025-09-12 23:26:19,634 basehttp 8921 136625233327808 "GET /qr-success/5edb5979-109c-4ab7-a91e-cded3d9ce097/ HTTP/1.1" 200 13722
+INFO 2025-09-12 23:26:19,702 basehttp 8921 136625233327808 "GET /media/qr_codes/qr_5edb5979-109c-4ab7-a91e-cded3d9ce097.png HTTP/1.1" 200 963
+INFO 2025-09-12 23:27:08,795 basehttp 8921 136625233327808 "GET /dashboard/ HTTP/1.1" 200 52131
+INFO 2025-09-12 23:27:15,097 basehttp 8921 136625233327808 "GET /orders/order_RGmQtZ6GSK9Z4c/ HTTP/1.1" 200 6768
+INFO 2025-09-12 23:27:15,165 basehttp 8921 136625233327808 "GET /media/qr_codes/qr_5edb5979-109c-4ab7-a91e-cded3d9ce097.png HTTP/1.1" 304 0
+INFO 2025-09-12 23:27:58,343 basehttp 8921 136625233327808 "GET /dashboard/ HTTP/1.1" 200 52131
+ERROR 2025-09-12 23:28:41,749 log 8921 136625233327808 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/core/views.py", line 610, in orders_view
+    return render(request, 'orders.html', {'orders': orders})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: orders.html
+ERROR 2025-09-12 23:28:41,750 basehttp 8921 136625233327808 "GET /orders/ HTTP/1.1" 500 104770
+INFO 2025-09-12 23:31:14,720 basehttp 8921 136625233327808 "GET /dashboard/ HTTP/1.1" 200 52131
+INFO 2025-09-12 23:32:13,609 autoreload 8921 136625397575808 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:32:14,129 autoreload 9716 137355788689536 Watching for file changes with StatReloader
+INFO 2025-09-12 23:32:17,648 autoreload 9716 137355788689536 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:32:18,131 autoreload 9744 132371996295296 Watching for file changes with StatReloader
+INFO 2025-09-12 23:32:32,926 autoreload 9744 132371996295296 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:32:33,419 autoreload 9772 127455452024960 Watching for file changes with StatReloader
+INFO 2025-09-12 23:32:35,863 autoreload 9772 127455452024960 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:32:36,383 autoreload 9799 134795682152576 Watching for file changes with StatReloader
+INFO 2025-09-12 23:34:24,508 autoreload 9799 134795682152576 /home/adithya/Desktop/rto1orginal/core/urls.py changed, reloading.
+INFO 2025-09-12 23:34:25,057 autoreload 9873 124081016828032 Watching for file changes with StatReloader
+INFO 2025-09-12 23:34:26,519 autoreload 9873 124081016828032 /home/adithya/Desktop/rto1orginal/core/urls.py changed, reloading.
+INFO 2025-09-12 23:34:27,011 autoreload 9894 133299814879360 Watching for file changes with StatReloader
+INFO 2025-09-12 23:34:34,642 autoreload 9894 133299814879360 /home/adithya/Desktop/rto1orginal/core/urls.py changed, reloading.
+INFO 2025-09-12 23:34:35,121 autoreload 9921 133303679488128 Watching for file changes with StatReloader
+INFO 2025-09-12 23:34:43,017 basehttp 9921 133303586780864 "GET /dashboard/ HTTP/1.1" 200 52036
+INFO 2025-09-12 23:34:46,793 basehttp 9921 133303586780864 "GET /orders/ HTTP/1.1" 200 114841
+INFO 2025-09-12 23:35:03,928 basehttp 9921 133303586780864 "GET /orders/order_R7yfqjxOO4ZMGb/ HTTP/1.1" 200 6479
+INFO 2025-09-12 23:35:55,652 basehttp 9921 133303586780864 "GET /select-service/ HTTP/1.1" 200 18004
+INFO 2025-09-12 23:37:30,215 autoreload 9921 133303679488128 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:37:31,124 autoreload 10082 129970519105664 Watching for file changes with StatReloader
+INFO 2025-09-12 23:37:32,898 autoreload 10082 129970519105664 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:37:33,761 autoreload 10102 128577258197120 Watching for file changes with StatReloader
+INFO 2025-09-12 23:42:03,725 basehttp 10102 128577093760704 "GET /select-service/ HTTP/1.1" 200 18004
+INFO 2025-09-12 23:42:06,431 basehttp 10102 128577093760704 "GET /dashboard/ HTTP/1.1" 200 52036
+INFO 2025-09-12 23:42:09,786 basehttp 10102 128577093760704 "GET /orders/ HTTP/1.1" 200 43147
+INFO 2025-09-12 23:42:27,522 basehttp 10102 128577093760704 "GET /orders/order_RGmQrye1dOc2B8/ HTTP/1.1" 200 6671
+INFO 2025-09-12 23:42:27,597 basehttp 10102 128577093760704 "GET /media/qr_codes/qr_5edb5979-109c-4ab7-a91e-cded3d9ce097.png HTTP/1.1" 304 0
+INFO 2025-09-12 23:42:35,031 basehttp 10102 128577093760704 "GET /orders/ HTTP/1.1" 200 43147
+INFO 2025-09-12 23:46:24,179 basehttp 10102 128577093760704 "GET /orders/ HTTP/1.1" 200 44969
+INFO 2025-09-12 23:48:56,443 basehttp 10102 128577093760704 "GET /orders/ HTTP/1.1" 200 47634
+INFO 2025-09-12 23:51:16,292 basehttp 10102 128577093760704 "GET /orders/ HTTP/1.1" 200 57040
+INFO 2025-09-12 23:55:56,729 basehttp 10102 128577093760704 "GET /orders/ HTTP/1.1" 200 47902
+INFO 2025-09-12 23:56:46,108 basehttp 10102 128577093760704 "GET /orders/ HTTP/1.1" 200 46880
+INFO 2025-09-12 23:56:52,999 basehttp 10102 128577093760704 "GET /dashboard/ HTTP/1.1" 200 52036
+INFO 2025-09-12 23:56:57,427 basehttp 10102 128577093760704 "GET /select-service/ HTTP/1.1" 200 18004
+INFO 2025-09-12 23:57:02,829 basehttp 10102 128577093760704 "GET /orders/ HTTP/1.1" 200 46880
+INFO 2025-09-12 23:57:10,047 basehttp 10102 128577093760704 "GET /orders/order_RGmQtZ6GSK9Z4c/ HTTP/1.1" 200 6673
+INFO 2025-09-12 23:57:10,107 basehttp 10102 128577093760704 "GET /media/qr_codes/qr_5edb5979-109c-4ab7-a91e-cded3d9ce097.png HTTP/1.1" 304 0
+INFO 2025-09-12 23:57:45,346 basehttp 10102 128577093760704 "GET /orders/order_RGdUmhDfhd9MSE/ HTTP/1.1" 200 6675
+INFO 2025-09-12 23:57:45,425 basehttp 10102 128577093760704 "GET /media/qr_codes/qr_12d59949-ff65-497b-bf3e-1c9e3b43d033.png HTTP/1.1" 304 0
+INFO 2025-09-12 23:57:58,659 basehttp 10102 128577093760704 "GET /orders/order_RGfbrNuU1Cm5kg/ HTTP/1.1" 200 6675
+INFO 2025-09-12 23:57:58,721 basehttp 10102 128577093760704 "GET /media/qr_codes/qr_1d172ceb-91ed-4a58-baf0-60dcf261922b.png HTTP/1.1" 304 0
+INFO 2025-09-12 23:58:04,880 basehttp 10102 128577093760704 "GET /orders/order_RGfvNVWr5yruUe/ HTTP/1.1" 200 6675
+INFO 2025-09-12 23:58:04,962 basehttp 10102 128577093760704 "GET /media/qr_codes/qr_adca9019-a884-468e-82b0-f72ffeffc4d0.png HTTP/1.1" 304 0
+INFO 2025-09-12 23:58:46,820 autoreload 10102 128577258197120 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:58:47,735 autoreload 10903 136278077489280 Watching for file changes with StatReloader
+INFO 2025-09-12 23:58:59,786 autoreload 10903 136278077489280 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:59:00,705 autoreload 10946 127547330011264 Watching for file changes with StatReloader
+INFO 2025-09-12 23:59:04,531 autoreload 10946 127547330011264 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-12 23:59:05,483 autoreload 10974 132275099295872 Watching for file changes with StatReloader
+INFO 2025-09-12 23:59:13,748 basehttp 10974 132275006076608 "GET /orders/ HTTP/1.1" 200 46880
+INFO 2025-09-12 23:59:18,260 basehttp 10974 132275006076608 "GET /profile/ HTTP/1.1" 200 12115
+ERROR 2025-09-12 23:59:29,833 log 10974 132275006076608 Internal Server Error: /profile/edit/
+Traceback (most recent call last):
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/core/views.py", line 646, in edit_profile_view
+    return render(request, 'core/edit_profile.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: core/edit_profile.html
+ERROR 2025-09-12 23:59:29,836 basehttp 10974 132275006076608 "GET /profile/edit/ HTTP/1.1" 500 100080
+INFO 2025-09-12 23:59:39,739 basehttp 10974 132275006076608 "GET /dashboard/ HTTP/1.1" 200 52036
+INFO 2025-09-12 23:59:56,723 autoreload 10974 132275099295872 /home/adithya/Desktop/rto1orginal/core/urls.py changed, reloading.
+INFO 2025-09-12 23:59:57,712 autoreload 11127 131154635149440 Watching for file changes with StatReloader
+INFO 2025-09-13 00:00:36,417 autoreload 11127 131154635149440 /home/adithya/Desktop/rto1orginal/core/urls.py changed, reloading.
+INFO 2025-09-13 00:00:37,243 autoreload 11327 127846826610816 Watching for file changes with StatReloader
+INFO 2025-09-13 08:53:20,253 autoreload 5529 130073207910528 Watching for file changes with StatReloader
+INFO 2025-09-13 08:53:24,440 basehttp 5529 130073044711104 "GET / HTTP/1.1" 302 0
+INFO 2025-09-13 08:53:24,481 basehttp 5529 130073044711104 "GET /dashboard/ HTTP/1.1" 200 52036
+WARNING 2025-09-13 08:53:24,593 log 5529 130073044711104 Not Found: /favicon.ico
+WARNING 2025-09-13 08:53:24,594 basehttp 5529 130073044711104 "GET /favicon.ico HTTP/1.1" 404 7866
+INFO 2025-09-13 08:53:31,489 basehttp 5529 130073044711104 "GET /orders/ HTTP/1.1" 200 46880
+INFO 2025-09-13 08:57:33,769 basehttp 5529 130073044711104 "GET /orders/ HTTP/1.1" 200 48296
+INFO 2025-09-13 08:57:53,484 basehttp 5529 130073044711104 "GET /orders/order_RGlsl0auokEBkU/ HTTP/1.1" 200 6675
+INFO 2025-09-13 08:57:53,554 basehttp 5529 130073044711104 "GET /media/qr_codes/qr_59dc7987-eb83-41ee-8998-ba416d0e9ef1.png HTTP/1.1" 304 0
+INFO 2025-09-13 08:58:13,540 basehttp 5529 130073044711104 "GET /dashboard/ HTTP/1.1" 200 52036
+INFO 2025-09-13 08:58:35,823 basehttp 5529 130073044711104 "GET /profile/ HTTP/1.1" 200 12115
+INFO 2025-09-13 08:58:43,325 basehttp 5529 130073044711104 "GET /orders/ HTTP/1.1" 200 48296
+INFO 2025-09-13 08:58:47,520 basehttp 5529 130073044711104 "GET /profile/ HTTP/1.1" 200 12115
+INFO 2025-09-13 08:58:50,554 basehttp 5529 130073044711104 "GET /records/create/rto/ HTTP/1.1" 200 14877
+INFO 2025-09-13 08:59:01,373 basehttp 5529 130073044711104 "GET /dashboard/ HTTP/1.1" 200 52036
+INFO 2025-09-13 09:00:02,909 basehttp 5529 130073044711104 "GET /dashboard/ HTTP/1.1" 200 52036
+ERROR 2025-09-13 09:00:06,536 log 5529 130073044711104 Internal Server Error: /profile/
+Traceback (most recent call last):
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/core/views.py", line 642, in profile_view
+    return render(request, 'core/profile.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'base' not found. 'base' is not a valid view function or pattern name.
+ERROR 2025-09-13 09:00:06,539 basehttp 5529 130073044711104 "GET /profile/ HTTP/1.1" 500 174096
+ERROR 2025-09-13 09:00:35,148 log 5529 130073044711104 Internal Server Error: /profile/
+Traceback (most recent call last):
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/core/views.py", line 642, in profile_view
+    return render(request, 'core/profile.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'base' not found. 'base' is not a valid view function or pattern name.
+ERROR 2025-09-13 09:00:35,150 basehttp 5529 130073044711104 "GET /profile/ HTTP/1.1" 500 173353
+ERROR 2025-09-13 09:00:36,717 log 5529 130073044711104 Internal Server Error: /profile/
+Traceback (most recent call last):
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/core/views.py", line 642, in profile_view
+    return render(request, 'core/profile.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'base' not found. 'base' is not a valid view function or pattern name.
+ERROR 2025-09-13 09:00:36,719 basehttp 5529 130073044711104 "GET /profile/ HTTP/1.1" 500 173353
+INFO 2025-09-13 09:00:56,697 basehttp 5529 130073044711104 "GET /profile/ HTTP/1.1" 200 12106
+INFO 2025-09-13 09:01:00,997 basehttp 5529 130073044711104 "GET /dashboard/ HTTP/1.1" 200 52036
+INFO 2025-09-13 09:01:09,341 basehttp 5529 130073044711104 "GET /orders/ HTTP/1.1" 200 48296
+INFO 2025-09-13 09:01:13,726 basehttp 5529 130073044711104 "GET /profile/ HTTP/1.1" 200 12106
+INFO 2025-09-13 09:03:14,465 basehttp 5529 130073044711104 "GET /profile/ HTTP/1.1" 200 9825
+ERROR 2025-09-13 09:03:33,459 log 5529 130073044711104 Internal Server Error: /profile/edit/
+Traceback (most recent call last):
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/core/views.py", line 646, in edit_profile_view
+    return render(request, 'core/edit_profile.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: core/edit_profile.html
+ERROR 2025-09-13 09:03:33,461 basehttp 5529 130073044711104 "GET /profile/edit/ HTTP/1.1" 500 100223
+INFO 2025-09-13 09:06:06,381 autoreload 5529 130073207910528 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 09:06:06,939 autoreload 6660 125390189760640 Watching for file changes with StatReloader
+INFO 2025-09-13 09:06:11,547 autoreload 6660 125390189760640 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 09:06:11,977 autoreload 6688 136402010169472 Watching for file changes with StatReloader
+INFO 2025-09-13 09:06:33,911 autoreload 6688 136402010169472 /home/adithya/Desktop/rto1orginal/core/urls.py changed, reloading.
+INFO 2025-09-13 09:06:34,389 autoreload 6742 137496016851072 Watching for file changes with StatReloader
+INFO 2025-09-13 09:07:12,744 basehttp 6742 137495853397696 "GET /profile/edit/ HTTP/1.1" 200 9408
+INFO 2025-09-13 09:07:40,696 basehttp 6742 137495853397696 "POST /profile/edit/ HTTP/1.1" 200 9408
+INFO 2025-09-13 09:07:44,274 basehttp 6742 137495853397696 "POST /profile/edit/ HTTP/1.1" 200 9408
+INFO 2025-09-13 09:07:50,190 basehttp 6742 137495853397696 "POST /profile/edit/ HTTP/1.1" 200 9408
+INFO 2025-09-13 09:09:38,575 autoreload 6742 137496016851072 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 09:09:39,097 autoreload 7007 124724722475136 Watching for file changes with StatReloader
+INFO 2025-09-13 09:09:40,691 autoreload 7007 124724722475136 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 09:09:41,174 autoreload 7028 127526713983104 Watching for file changes with StatReloader
+INFO 2025-09-13 09:14:54,544 autoreload 7028 127526713983104 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:14:55,132 autoreload 7131 124949120880768 Watching for file changes with StatReloader
+INFO 2025-09-13 09:14:56,649 autoreload 7131 124949120880768 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:14:57,193 autoreload 7159 132013459751040 Watching for file changes with StatReloader
+INFO 2025-09-13 09:15:03,749 autoreload 7159 132013459751040 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:15:04,268 autoreload 7193 136929382572160 Watching for file changes with StatReloader
+INFO 2025-09-13 09:15:35,529 autoreload 7193 136929382572160 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:15:36,013 autoreload 7244 128344325767296 Watching for file changes with StatReloader
+INFO 2025-09-13 09:15:38,459 autoreload 7244 128344325767296 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:15:38,949 autoreload 7272 136041306886272 Watching for file changes with StatReloader
+INFO 2025-09-13 09:16:12,015 autoreload 7272 136041306886272 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:16:12,487 autoreload 7306 137667525845120 Watching for file changes with StatReloader
+INFO 2025-09-13 09:16:19,923 autoreload 7306 137667525845120 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:16:20,323 autoreload 7353 130727631396992 Watching for file changes with StatReloader
+INFO 2025-09-13 09:16:24,523 autoreload 7353 130727631396992 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:16:24,877 autoreload 7380 137001635274880 Watching for file changes with StatReloader
+INFO 2025-09-13 09:16:28,074 autoreload 7380 137001635274880 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:16:28,492 autoreload 7401 129990266654848 Watching for file changes with StatReloader
+INFO 2025-09-13 09:16:29,672 autoreload 7401 129990266654848 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:16:30,100 autoreload 7410 129235158294656 Watching for file changes with StatReloader
+INFO 2025-09-13 09:16:33,338 autoreload 7410 129235158294656 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:16:33,727 autoreload 7432 138783037898880 Watching for file changes with StatReloader
+INFO 2025-09-13 09:16:36,920 autoreload 7432 138783037898880 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:16:37,313 autoreload 7447 137095895855232 Watching for file changes with StatReloader
+INFO 2025-09-13 09:16:44,540 autoreload 7447 137095895855232 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:16:44,962 autoreload 7492 126553574236288 Watching for file changes with StatReloader
+INFO 2025-09-13 09:17:19,446 autoreload 7492 126553574236288 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:17:19,866 autoreload 7534 128485269414016 Watching for file changes with StatReloader
+INFO 2025-09-13 09:17:22,240 autoreload 7534 128485269414016 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:17:22,733 autoreload 7561 137893239971968 Watching for file changes with StatReloader
+INFO 2025-09-13 09:30:09,589 autoreload 8643 139062222291072 Watching for file changes with StatReloader
+INFO 2025-09-13 09:30:13,909 basehttp 8643 139062128146112 "GET / HTTP/1.1" 302 0
+INFO 2025-09-13 09:30:13,939 basehttp 8643 139062128146112 "GET /dashboard/ HTTP/1.1" 200 52036
+INFO 2025-09-13 09:30:20,036 basehttp 8643 139062128146112 "GET /orders/ HTTP/1.1" 200 48296
+INFO 2025-09-13 09:30:21,794 basehttp 8643 139062128146112 "GET /dashboard/ HTTP/1.1" 200 52036
+INFO 2025-09-13 09:30:24,494 basehttp 8643 139062128146112 "GET /profile/ HTTP/1.1" 200 9825
+INFO 2025-09-13 09:30:26,778 basehttp 8643 139062128146112 "GET /profile/edit/ HTTP/1.1" 200 9408
+INFO 2025-09-13 09:30:47,267 basehttp 8643 139062128146112 "POST /profile/edit/ HTTP/1.1" 200 9408
+INFO 2025-09-13 09:31:22,200 basehttp 8643 139062128146112 "GET /profile/ HTTP/1.1" 200 9825
+INFO 2025-09-13 09:32:08,165 autoreload 8643 139062222291072 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 09:32:09,000 autoreload 8933 125462840410240 Watching for file changes with StatReloader
+INFO 2025-09-13 09:32:11,805 autoreload 8933 125462840410240 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 09:32:13,010 autoreload 8959 133106801053824 Watching for file changes with StatReloader
+INFO 2025-09-13 09:32:15,837 autoreload 8959 133106801053824 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 09:32:16,789 autoreload 8987 130261141299328 Watching for file changes with StatReloader
+INFO 2025-09-13 09:34:45,434 autoreload 8987 130261141299328 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 09:34:46,331 autoreload 9058 123565487886464 Watching for file changes with StatReloader
+INFO 2025-09-13 09:34:52,993 autoreload 9058 123565487886464 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 09:34:53,777 autoreload 9101 123246126899328 Watching for file changes with StatReloader
+INFO 2025-09-13 09:34:59,390 autoreload 9101 123246126899328 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 09:35:00,200 autoreload 9128 127466458415232 Watching for file changes with StatReloader
+INFO 2025-09-13 09:37:46,246 autoreload 9128 127466458415232 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 09:37:47,173 autoreload 9226 135138607190144 Watching for file changes with StatReloader
+INFO 2025-09-13 09:37:51,190 basehttp 9226 135138444834496 "GET /profile/ HTTP/1.1" 200 9825
+INFO 2025-09-13 09:37:52,376 basehttp 9226 135138444834496 "GET /profile/ HTTP/1.1" 200 9825
+INFO 2025-09-13 09:37:53,886 basehttp 9226 135138444834496 "GET /profile/edit/ HTTP/1.1" 200 9408
+INFO 2025-09-13 09:38:10,318 basehttp 9226 135138444834496 "POST /profile/edit/ HTTP/1.1" 200 9408
+INFO 2025-09-13 09:38:12,032 basehttp 9226 135138444834496 "POST /profile/edit/ HTTP/1.1" 200 9408
+INFO 2025-09-13 09:38:15,259 basehttp 9226 135138444834496 "GET /profile/ HTTP/1.1" 200 9825
+INFO 2025-09-13 09:39:35,968 autoreload 9226 135138607190144 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 09:39:36,935 autoreload 9375 131715020824704 Watching for file changes with StatReloader
+INFO 2025-09-13 09:39:43,902 autoreload 9375 131715020824704 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 09:39:44,835 autoreload 9417 131291279675520 Watching for file changes with StatReloader
+INFO 2025-09-13 09:39:49,515 basehttp 9417 131291186984640 "GET /profile/ HTTP/1.1" 200 9825
+INFO 2025-09-13 09:39:51,222 basehttp 9417 131291186984640 "GET /profile/edit/ HTTP/1.1" 200 9408
+INFO 2025-09-13 09:40:08,610 basehttp 9417 131291186984640 "POST /profile/edit/ HTTP/1.1" 200 9408
+INFO 2025-09-13 09:40:11,795 basehttp 9417 131291186984640 "GET /profile/ HTTP/1.1" 200 9825
+INFO 2025-09-13 09:44:58,148 autoreload 9417 131291279675520 /home/adithya/Desktop/rto1orginal/authentication/models.py changed, reloading.
+INFO 2025-09-13 09:44:58,954 autoreload 9630 127210395467904 Watching for file changes with StatReloader
+INFO 2025-09-13 09:45:03,266 autoreload 9630 127210395467904 /home/adithya/Desktop/rto1orginal/authentication/models.py changed, reloading.
+INFO 2025-09-13 09:45:04,123 autoreload 9663 133377471623296 Watching for file changes with StatReloader
+INFO 2025-09-13 09:45:05,825 autoreload 9663 133377471623296 /home/adithya/Desktop/rto1orginal/authentication/models.py changed, reloading.
+INFO 2025-09-13 09:45:06,640 autoreload 9682 136137241845888 Watching for file changes with StatReloader
+INFO 2025-09-13 09:45:10,513 autoreload 9682 136137241845888 /home/adithya/Desktop/rto1orginal/authentication/models.py changed, reloading.
+INFO 2025-09-13 09:45:11,447 autoreload 9710 139890629267584 Watching for file changes with StatReloader
+INFO 2025-09-13 09:45:17,392 autoreload 9710 139890629267584 /home/adithya/Desktop/rto1orginal/authentication/models.py changed, reloading.
+INFO 2025-09-13 09:45:18,345 autoreload 9739 129206819848320 Watching for file changes with StatReloader
+INFO 2025-09-13 09:46:07,390 autoreload 9739 129206819848320 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:46:08,337 autoreload 9795 134731690729600 Watching for file changes with StatReloader
+INFO 2025-09-13 09:47:00,509 autoreload 9795 134731690729600 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:47:01,546 autoreload 9846 127818784071808 Watching for file changes with StatReloader
+INFO 2025-09-13 09:47:05,551 autoreload 9846 127818784071808 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:47:06,612 autoreload 9872 130408019165312 Watching for file changes with StatReloader
+INFO 2025-09-13 09:47:13,666 autoreload 9872 130408019165312 /home/adithya/Desktop/rto1orginal/core/models.py changed, reloading.
+INFO 2025-09-13 09:47:14,520 autoreload 9915 135321218957440 Watching for file changes with StatReloader
+INFO 2025-09-13 09:48:03,076 autoreload 10064 127683111813248 Watching for file changes with StatReloader
+INFO 2025-09-13 09:51:57,181 autoreload 10407 131527874908288 Watching for file changes with StatReloader
+INFO 2025-09-13 09:52:00,510 basehttp 10407 131527711127232 "GET / HTTP/1.1" 302 0
+INFO 2025-09-13 09:52:00,571 basehttp 10407 131527711127232 "GET /dashboard/ HTTP/1.1" 200 52036
+INFO 2025-09-13 09:52:12,099 basehttp 10407 131527711127232 "GET /profile/ HTTP/1.1" 200 9825
+INFO 2025-09-13 09:52:18,120 basehttp 10407 131527711127232 "GET /profile/edit/ HTTP/1.1" 200 9408
+INFO 2025-09-13 09:52:37,685 basehttp 10407 131527711127232 "POST /profile/edit/ HTTP/1.1" 200 9408
+WARNING 2025-09-13 09:52:43,134 log 10407 131527711127232 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-13 09:52:43,135 basehttp 10407 131527711127232 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8158
+INFO 2025-09-13 09:55:24,515 autoreload 10407 131527874908288 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 09:55:25,528 autoreload 10724 130945715064960 Watching for file changes with StatReloader
+INFO 2025-09-13 09:55:32,683 autoreload 10724 130945715064960 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 09:55:33,861 autoreload 10776 135107537330304 Watching for file changes with StatReloader
+INFO 2025-09-13 10:06:13,884 autoreload 11164 126124619292800 Watching for file changes with StatReloader
+INFO 2025-09-13 10:06:17,286 basehttp 11164 126124457719488 "GET / HTTP/1.1" 302 0
+INFO 2025-09-13 10:06:17,347 basehttp 11164 126124457719488 "GET /dashboard/ HTTP/1.1" 200 52036
+INFO 2025-09-13 10:06:22,694 basehttp 11164 126124457719488 "GET /profile/ HTTP/1.1" 200 9825
+ERROR 2025-09-13 10:06:24,981 log 11164 126124457719488 Internal Server Error: /profile/edit/
+Traceback (most recent call last):
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/core/views.py", line 619, in edit_profile_view
+    profile = user.core_profile  # Correct access to extended profile
+              ^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 525, in __get__
+    raise self.RelatedObjectDoesNotExist(
+authentication.models.User.core_profile.RelatedObjectDoesNotExist: User has no core_profile.. Did you mean: 'auth_profile'?
+ERROR 2025-09-13 10:06:24,989 basehttp 11164 126124457719488 "GET /profile/edit/ HTTP/1.1" 500 93444
+INFO 2025-09-13 10:13:30,842 autoreload 11808 128449026470016 Watching for file changes with StatReloader
+INFO 2025-09-13 10:13:34,722 basehttp 11808 128448932607680 "GET / HTTP/1.1" 302 0
+INFO 2025-09-13 10:13:34,799 basehttp 11808 128448932607680 "GET /dashboard/ HTTP/1.1" 200 52036
+INFO 2025-09-13 10:13:39,870 basehttp 11808 128448932607680 "GET /profile/ HTTP/1.1" 200 9825
+INFO 2025-09-13 10:13:42,234 basehttp 11808 128448932607680 "GET /profile/edit/ HTTP/1.1" 200 9444
+INFO 2025-09-13 10:13:58,664 basehttp 11808 128448932607680 "POST /profile/edit/ HTTP/1.1" 302 0
+INFO 2025-09-13 10:13:58,687 basehttp 11808 128448932607680 "GET /profile/ HTTP/1.1" 200 10189
+INFO 2025-09-13 10:14:17,175 autoreload 11808 128449026470016 /home/adithya/Desktop/rto1orginal/rto_project/settings/base.py changed, reloading.
+INFO 2025-09-13 10:14:18,084 autoreload 12020 123395530748032 Watching for file changes with StatReloader
+INFO 2025-09-13 13:46:35,067 autoreload 5072 132974958116992 Watching for file changes with StatReloader
+INFO 2025-09-13 13:46:39,390 basehttp 5072 132974796338880 "GET / HTTP/1.1" 302 0
+INFO 2025-09-13 13:46:39,435 basehttp 5072 132974796338880 "GET /dashboard/ HTTP/1.1" 200 52036
+WARNING 2025-09-13 13:46:39,602 log 5072 132974796338880 Not Found: /favicon.ico
+WARNING 2025-09-13 13:46:39,603 basehttp 5072 132974796338880 "GET /favicon.ico HTTP/1.1" 404 8047
+INFO 2025-09-13 13:47:44,872 basehttp 5072 132974796338880 "GET /profile/ HTTP/1.1" 200 9825
+INFO 2025-09-13 13:47:51,851 basehttp 5072 132974796338880 "GET /orders/ HTTP/1.1" 200 48296
+WARNING 2025-09-13 13:48:00,882 log 5072 132974796338880 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-13 13:48:00,882 basehttp 5072 132974796338880 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8158
+INFO 2025-09-13 13:48:29,523 basehttp 5072 132974796338880 "GET /dashboard/ HTTP/1.1" 200 52036
+WARNING 2025-09-13 13:48:29,595 log 5072 132974796338880 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-13 13:48:29,597 basehttp 5072 132974796338880 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8158
+INFO 2025-09-13 13:49:17,911 basehttp 5072 132974796338880 "GET /profile/ HTTP/1.1" 200 9825
+INFO 2025-09-13 13:51:11,791 basehttp 5072 132974796338880 "GET /dashboard/ HTTP/1.1" 200 52029
+INFO 2025-09-13 13:51:45,334 basehttp 5072 132974796338880 "GET /dashboard/ HTTP/1.1" 200 52045
+INFO 2025-09-13 13:52:29,551 basehttp 5072 132974796338880 "GET /dashboard/ HTTP/1.1" 200 52049
+INFO 2025-09-13 13:53:34,548 basehttp 5072 132974796338880 "GET /dashboard/ HTTP/1.1" 200 52054
+INFO 2025-09-13 13:53:52,835 basehttp 5072 132974796338880 "GET /profile/ HTTP/1.1" 200 9830
+INFO 2025-09-13 13:53:55,466 basehttp 5072 132974796338880 "GET /profile/edit/ HTTP/1.1" 200 9360
+INFO 2025-09-13 13:53:55,534 basehttp 5072 132974796338880 "GET /media/profiles/Screenshot_from_2025-09-12_23-51-49.png HTTP/1.1" 200 216367
+INFO 2025-09-13 13:54:00,037 basehttp 5072 132974796338880 "POST /profile/edit/ HTTP/1.1" 302 0
+INFO 2025-09-13 13:54:00,067 basehttp 5072 132974796338880 "GET /profile/ HTTP/1.1" 200 10194
+INFO 2025-09-13 13:59:45,756 autoreload 5072 132974958116992 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 13:59:46,306 autoreload 5859 125024405618816 Watching for file changes with StatReloader
+INFO 2025-09-13 13:59:49,924 autoreload 5859 125024405618816 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 13:59:50,403 autoreload 5884 128398430797952 Watching for file changes with StatReloader
+INFO 2025-09-13 14:00:09,266 autoreload 5884 128398430797952 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 14:00:09,728 autoreload 5918 132663880994944 Watching for file changes with StatReloader
+INFO 2025-09-13 14:00:14,453 basehttp 5918 132663717394112 "GET /profile/ HTTP/1.1" 200 9724
+INFO 2025-09-13 14:00:20,640 basehttp 5918 132663717394112 "GET /profile/edit/ HTTP/1.1" 200 9360
+INFO 2025-09-13 14:01:58,689 basehttp 5918 132663717394112 "POST /profile/edit/ HTTP/1.1" 302 0
+INFO 2025-09-13 14:01:58,716 basehttp 5918 132663717394112 "GET /profile/ HTTP/1.1" 200 10064
+INFO 2025-09-13 14:01:58,811 basehttp 5918 132663717394112 "GET /media/profiles/adhi.jpeg HTTP/1.1" 200 124664
+INFO 2025-09-13 14:02:11,783 basehttp 5918 132663717394112 "GET /orders/ HTTP/1.1" 200 48301
+INFO 2025-09-13 14:02:18,093 basehttp 5918 132663717394112 "GET /profile/ HTTP/1.1" 200 9700
+INFO 2025-09-13 14:02:18,163 basehttp 5918 132663717394112 "GET /media/profiles/adhi.jpeg HTTP/1.1" 304 0
+WARNING 2025-09-13 14:02:35,793 log 5918 132663717394112 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-13 14:02:35,794 basehttp 5918 132663717394112 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8158
+INFO 2025-09-13 14:02:47,068 basehttp 5918 132663717394112 "GET /profile/edit/ HTTP/1.1" 200 9336
+INFO 2025-09-13 14:02:47,160 basehttp 5918 132663709001408 "GET /media/profiles/adhi.jpeg HTTP/1.1" 304 0
+WARNING 2025-09-13 14:02:47,173 log 5918 132663717394112 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-13 14:02:47,174 basehttp 5918 132663717394112 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8158
+INFO 2025-09-13 14:02:51,047 basehttp 5918 132663717394112 "GET /profile/ HTTP/1.1" 200 9700
+WARNING 2025-09-13 14:02:51,124 log 5918 132663717394112 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-13 14:02:51,125 basehttp 5918 132663717394112 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8158
+INFO 2025-09-13 14:02:55,868 basehttp 5918 132663717394112 "GET /dashboard/ HTTP/1.1" 200 52054
+WARNING 2025-09-13 14:02:55,958 log 5918 132663717394112 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-13 14:02:55,959 basehttp 5918 132663717394112 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8158
+INFO 2025-09-13 14:03:07,041 basehttp 5918 132663717394112 "GET /dashboard/ HTTP/1.1" 200 52054
+ERROR 2025-09-13 14:03:18,336 log 5918 132663717394112 Internal Server Error: /records/59dc7987-eb83-41ee-8998-ba416d0e9ef1/
+Traceback (most recent call last):
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/core/views.py", line 194, in record_detail_view
+    return render(request, 'record_detail.html', {'record': record, 'orders': orders})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya/Desktop/rto1orginal/venv/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: record_detail.html
+ERROR 2025-09-13 14:03:18,338 basehttp 5918 132663717394112 "GET /records/59dc7987-eb83-41ee-8998-ba416d0e9ef1/ HTTP/1.1" 500 102329
+INFO 2025-09-13 14:03:39,168 autoreload 6527 131324987744384 Watching for file changes with StatReloader
+INFO 2025-09-13 14:03:42,461 basehttp 6527 131324894508736 "GET / HTTP/1.1" 302 0
+INFO 2025-09-13 14:03:42,526 basehttp 6527 131324894508736 "GET /dashboard/ HTTP/1.1" 200 52054
+INFO 2025-09-13 14:07:51,493 basehttp 6527 131324894508736 "GET /dashboard/ HTTP/1.1" 200 39590
+INFO 2025-09-13 14:08:02,195 basehttp 6527 131324894508736 "GET /media/qr_codes/qr_5edb5979-109c-4ab7-a91e-cded3d9ce097.png HTTP/1.1" 304 0
+INFO 2025-09-13 14:12:13,844 basehttp 6527 131324894508736 "GET /dashboard/ HTTP/1.1" 200 35556
+INFO 2025-09-13 14:12:29,493 basehttp 6527 131324894508736 "GET /select-service/ HTTP/1.1" 200 18009
+INFO 2025-09-13 14:12:31,901 basehttp 6527 131324894508736 "GET /dashboard/ HTTP/1.1" 200 35556
+INFO 2025-09-13 14:12:58,306 basehttp 6527 131324894508736 "GET /dashboard/ HTTP/1.1" 200 23952
+INFO 2025-09-13 14:13:11,872 basehttp 6527 131324894508736 "GET /profile/ HTTP/1.1" 200 9700
+INFO 2025-09-13 14:13:11,926 basehttp 6527 131324894508736 "GET /media/profiles/adhi.jpeg HTTP/1.1" 304 0
+INFO 2025-09-13 14:13:14,198 basehttp 6527 131324894508736 "GET /dashboard/ HTTP/1.1" 200 23952
+INFO 2025-09-13 14:13:38,874 basehttp 6527 131324894508736 "GET /dashboard/ HTTP/1.1" 200 39590
+INFO 2025-09-13 14:17:44,205 basehttp 6527 131324894508736 "GET /dashboard/ HTTP/1.1" 200 33961
+INFO 2025-09-13 14:17:58,351 basehttp 6527 131324894508736 "GET /dashboard/?sort=oldest HTTP/1.1" 200 33961
+INFO 2025-09-13 14:20:46,832 basehttp 6527 131324894508736 "GET /dashboard/?sort=oldest HTTP/1.1" 200 34616
+INFO 2025-09-13 14:20:59,561 basehttp 6527 131324894508736 "GET /dashboard/?show=all HTTP/1.1" 200 34616
+INFO 2025-09-13 14:21:15,766 basehttp 6527 131324894508736 "GET /dashboard/?show=all HTTP/1.1" 200 34616
+INFO 2025-09-13 14:25:32,612 autoreload 6527 131324987744384 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 14:25:33,148 autoreload 7363 136101760688256 Watching for file changes with StatReloader
+INFO 2025-09-13 14:25:35,605 autoreload 7363 136101760688256 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 14:25:36,067 autoreload 7394 133868919058560 Watching for file changes with StatReloader
+INFO 2025-09-13 14:25:38,620 autoreload 7394 133868919058560 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-13 14:25:39,112 autoreload 7409 136563723821184 Watching for file changes with StatReloader
+INFO 2025-09-13 14:25:43,211 basehttp 7409 136563560281792 "GET /dashboard/?show=all HTTP/1.1" 200 34616
+INFO 2025-09-13 14:25:46,912 basehttp 7409 136563560281792 "GET /dashboard/?show=all HTTP/1.1" 200 34616
+INFO 2025-09-13 14:26:04,930 basehttp 7409 136563560281792 "GET /dashboard/?sort=oldest HTTP/1.1" 200 34617
+INFO 2025-09-13 14:26:12,729 basehttp 7409 136563560281792 "GET /dashboard/?sort=name HTTP/1.1" 200 33058
+INFO 2025-09-13 14:26:26,339 basehttp 7409 136563560281792 "GET /dashboard/?sort=date HTTP/1.1" 200 34617
+INFO 2025-09-13 14:26:38,244 basehttp 7409 136563560281792 "GET /dashboard/?sort=name HTTP/1.1" 200 33058
+INFO 2025-09-13 14:26:47,282 basehttp 7409 136563560281792 "GET /dashboard/?show=all HTTP/1.1" 200 34616
+INFO 2025-09-13 14:26:51,935 basehttp 7409 136563560281792 "GET /media/qr_codes/qr_4de455d3-d441-4b8f-a8c5-554169f99954.png HTTP/1.1" 304 0
+INFO 2025-09-13 14:28:31,772 basehttp 7409 136563560281792 "GET /dashboard/?show=all HTTP/1.1" 200 34621
+INFO 2025-09-13 14:31:47,054 basehttp 7409 136563560281792 "GET /dashboard/?show=all HTTP/1.1" 200 32194
+INFO 2025-09-13 14:31:57,543 basehttp 7409 136563560281792 "GET /dashboard/?sort=oldest HTTP/1.1" 200 32195
+INFO 2025-09-13 14:32:05,011 basehttp 7409 136563560281792 "GET /dashboard/?sort=recent HTTP/1.1" 200 32194
+INFO 2025-09-13 14:32:18,205 basehttp 7409 136563560281792 "GET /dashboard/?show=all HTTP/1.1" 200 32194
+INFO 2025-09-13 14:32:42,060 basehttp 7409 136563560281792 "GET /dashboard/?show=all HTTP/1.1" 200 32203
+INFO 2025-09-13 14:33:08,981 basehttp 7409 136563560281792 "GET /select-service/ HTTP/1.1" 200 18009
+INFO 2025-09-13 14:33:13,997 basehttp 7409 136563560281792 "GET /select-service/ HTTP/1.1" 200 18009
+INFO 2025-09-13 14:33:17,059 basehttp 7409 136563560281792 "GET /dashboard/ HTTP/1.1" 200 32203
+INFO 2025-09-13 14:33:20,202 basehttp 7409 136563560281792 "GET /select-service/ HTTP/1.1" 200 18009
+INFO 2025-09-13 14:33:24,482 basehttp 7409 136563560281792 "GET /records/create/rto/?service=nfc&price=400&type=RTO HTTP/1.1" 200 14882
+INFO 2025-09-13 14:34:47,038 basehttp 7409 136563560281792 "POST /ajax/create-record/ HTTP/1.1" 200 82
+INFO 2025-09-13 14:34:48,033 basehttp 7409 136563560281792 "GET /records/ab3e796a-2a53-4527-adb7-2b3eceb485d9/payment/nfc_card/ HTTP/1.1" 200 11025
+INFO 2025-09-13 14:35:24,958 basehttp 7409 136563560281792 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+INFO 2025-09-13 14:35:25,013 basehttp 7409 136563560281792 "GET /qr-success/ab3e796a-2a53-4527-adb7-2b3eceb485d9/ HTTP/1.1" 200 13636
+INFO 2025-09-13 14:35:25,117 basehttp 7409 136563560281792 "GET /media/qr_codes/qr_ab3e796a-2a53-4527-adb7-2b3eceb485d9.png HTTP/1.1" 200 986
+INFO 2025-09-13 14:37:29,417 basehttp 7409 136563560281792 "GET /select-service/ HTTP/1.1" 200 18009
+INFO 2025-09-13 14:37:32,972 basehttp 7409 136563560281792 "GET /records/create/rto/?service=pvc&price=100&type=RTO HTTP/1.1" 200 14882
+INFO 2025-09-13 14:37:40,348 basehttp 7409 136563560281792 "GET /dashboard/ HTTP/1.1" 200 32201
+INFO 2025-09-13 14:37:45,187 basehttp 7409 136563560281792 "GET /media/qr_codes/qr_ab3e796a-2a53-4527-adb7-2b3eceb485d9.png HTTP/1.1" 304 0
+INFO 2025-09-13 14:38:20,745 basehttp 7409 136563560281792 "GET /select-service/ HTTP/1.1" 200 18009
+INFO 2025-09-13 14:38:24,251 basehttp 7409 136563560281792 "GET /records/create/rto/?service=pvc&price=100&type=RTO HTTP/1.1" 200 14882
+INFO 2025-09-13 14:39:07,670 basehttp 7409 136563560281792 "POST /ajax/create-record/ HTTP/1.1" 200 82
+INFO 2025-09-13 14:39:08,692 basehttp 7409 136563560281792 "GET /records/9df7f5b0-9b82-4f46-8f5f-f7fa65d92e4a/payment/pvc_card/ HTTP/1.1" 200 11036
+INFO 2025-09-13 14:39:46,159 basehttp 7409 136563560281792 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+INFO 2025-09-13 14:39:46,209 basehttp 7409 136563560281792 "GET /qr-success/9df7f5b0-9b82-4f46-8f5f-f7fa65d92e4a/ HTTP/1.1" 200 13633
+INFO 2025-09-13 14:39:46,326 basehttp 7409 136563560281792 "GET /media/qr_codes/qr_9df7f5b0-9b82-4f46-8f5f-f7fa65d92e4a.png HTTP/1.1" 200 981
+INFO 2025-09-13 14:41:28,425 basehttp 7409 136563560281792 "GET /qr-success/9df7f5b0-9b82-4f46-8f5f-f7fa65d92e4a/ HTTP/1.1" 200 11497
+INFO 2025-09-13 14:41:28,484 basehttp 7409 136563560281792 "GET /media/qr_codes/qr_9df7f5b0-9b82-4f46-8f5f-f7fa65d92e4a.png HTTP/1.1" 304 0
+INFO 2025-09-13 14:49:08,212 basehttp 7409 136563560281792 "GET /dashboard/ HTTP/1.1" 200 20051
+INFO 2025-09-13 14:49:12,827 basehttp 7409 136563560281792 "GET /dashboard/ HTTP/1.1" 200 20051
+INFO 2025-09-13 14:49:43,614 basehttp 7409 136563560281792 "GET /dashboard/ HTTP/1.1" 200 22135
+INFO 2025-09-13 14:56:42,360 basehttp 7409 136563560281792 "GET /dashboard/ HTTP/1.1" 200 23574
+INFO 2025-09-13 14:57:07,546 basehttp 7409 136563560281792 "GET /select-service/ HTTP/1.1" 200 18009
+INFO 2025-09-13 15:00:47,605 basehttp 7409 136563560281792 "GET /dashboard/ HTTP/1.1" 200 24332
+INFO 2025-09-13 15:01:04,476 basehttp 7409 136563560281792 "GET /dashboard/ HTTP/1.1" 200 24332
+INFO 2025-09-13 15:01:22,398 basehttp 7409 136563560281792 "GET /media/qr_codes/qr_59dc7987-eb83-41ee-8998-ba416d0e9ef1.png HTTP/1.1" 304 0
+WARNING 2025-09-13 15:01:30,624 log 7409 136563560281792 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-13 15:01:30,625 basehttp 7409 136563560281792 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8158
+INFO 2025-09-13 15:05:01,894 basehttp 7409 136563560281792 "GET /dashboard/ HTTP/1.1" 200 24346
+WARNING 2025-09-13 15:05:01,990 log 7409 136563560281792 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-13 15:05:01,990 basehttp 7409 136563560281792 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8158
+INFO 2025-09-13 15:05:10,997 basehttp 7409 136563560281792 "GET /dashboard/ HTTP/1.1" 200 24346
+INFO 2025-09-13 15:05:24,857 basehttp 7409 136563560281792 "GET /dashboard/ HTTP/1.1" 200 24343
+INFO 2025-09-13 15:05:43,358 basehttp 7409 136563560281792 "GET /dashboard/ HTTP/1.1" 200 24332
+INFO 2025-09-13 15:06:09,989 basehttp 7409 136563560281792 "GET /dashboard/ HTTP/1.1" 200 24335
+INFO 2025-09-13 15:06:50,915 basehttp 7409 136563560281792 "GET /dashboard/ HTTP/1.1" 200 24332
+INFO 2025-09-13 15:07:23,761 basehttp 7409 136563560281792 "GET /dashboard/ HTTP/1.1" 200 20051
+INFO 2025-09-14 09:55:44,162 autoreload 4464 132790954217600 Watching for file changes with StatReloader
+WARNING 2025-09-14 09:55:51,888 log 4464 132790792222400 Not Found: /favicon.ico
+WARNING 2025-09-14 09:55:51,889 basehttp 4464 132790792222400 "GET /favicon.ico HTTP/1.1" 404 8047
+INFO 2025-09-14 09:55:54,594 basehttp 4464 132790792222400 "GET /dashboard/ HTTP/1.1" 200 20051
+INFO 2025-09-14 09:56:04,570 basehttp 4464 132790792222400 "GET /profile/ HTTP/1.1" 200 9700
+INFO 2025-09-14 09:56:04,605 basehttp 4464 132790792222400 "GET /media/profiles/adhi.jpeg HTTP/1.1" 304 0
+INFO 2025-09-14 09:56:10,411 basehttp 4464 132790792222400 "GET /profile/edit/ HTTP/1.1" 200 9336
+INFO 2025-09-14 09:56:13,736 basehttp 4464 132790792222400 "GET /profile/ HTTP/1.1" 200 9700
+INFO 2025-09-14 09:56:20,739 basehttp 4464 132790792222400 "GET /dashboard/ HTTP/1.1" 200 20051
+INFO 2025-09-14 09:56:29,593 basehttp 4464 132790792222400 "GET /select-service/ HTTP/1.1" 200 18009
+INFO 2025-09-14 09:56:32,909 basehttp 4464 132790792222400 "GET /records/create/rto/?service=pvc&price=100&type=RTO HTTP/1.1" 200 14882
+INFO 2025-09-14 09:56:46,848 basehttp 4464 132790792222400 "GET /orders/ HTTP/1.1" 200 55041
+INFO 2025-09-14 09:57:00,010 basehttp 4464 132790792222400 "GET /orders/ HTTP/1.1" 200 55041
+INFO 2025-09-14 09:57:05,512 basehttp 4464 132790792222400 "GET /profile/ HTTP/1.1" 200 9700
+INFO 2025-09-14 09:57:07,833 basehttp 4464 132790792222400 "GET /dashboard/ HTTP/1.1" 200 20051
+INFO 2025-09-14 09:57:23,223 basehttp 4464 132790792222400 "GET /dashboard/?sort=oldest HTTP/1.1" 200 20055
+INFO 2025-09-14 09:57:30,283 basehttp 4464 132790792222400 "GET /dashboard/?sort=recent HTTP/1.1" 200 20051
+WARNING 2025-09-14 09:57:35,163 log 4464 132790792222400 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-14 09:57:35,163 basehttp 4464 132790792222400 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8158
+INFO 2025-09-14 09:57:46,570 basehttp 4464 132790792222400 "GET /dashboard/?sort=recent HTTP/1.1" 200 20051
+WARNING 2025-09-14 09:57:46,657 log 4464 132790792222400 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-14 09:57:46,658 basehttp 4464 132790792222400 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8158
+INFO 2025-09-14 09:58:17,067 basehttp 4464 132790792222400 "GET /select-service/ HTTP/1.1" 200 18009
+INFO 2025-09-14 09:58:20,457 basehttp 4464 132790792222400 "GET /records/create/rto/?service=qr&price=2&type=RTO HTTP/1.1" 200 14882
+INFO 2025-09-14 10:00:03,596 basehttp 4464 132790792222400 "POST /ajax/create-record/ HTTP/1.1" 200 85
+INFO 2025-09-14 10:00:04,405 basehttp 4464 132790792222400 "GET /records/d3d15c7b-c7f3-49e5-9d31-930f6647eb24/payment/qr_download/ HTTP/1.1" 200 11026
+INFO 2025-09-14 10:00:41,043 basehttp 4464 132790792222400 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+INFO 2025-09-14 10:00:41,099 basehttp 4464 132790792222400 "GET /qr-success/d3d15c7b-c7f3-49e5-9d31-930f6647eb24/ HTTP/1.1" 200 11494
+INFO 2025-09-14 10:00:41,211 basehttp 4464 132790792222400 "GET /media/qr_codes/qr_d3d15c7b-c7f3-49e5-9d31-930f6647eb24.png HTTP/1.1" 200 959
+INFO 2025-09-14 10:03:22,384 autoreload 4464 132790954217600 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-14 10:03:23,044 autoreload 5928 132706633977984 Watching for file changes with StatReloader
+INFO 2025-09-14 10:03:24,545 autoreload 5928 132706633977984 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-14 10:03:24,976 autoreload 5955 129909662134400 Watching for file changes with StatReloader
+INFO 2025-09-14 10:03:28,484 autoreload 5955 129909662134400 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-14 10:03:28,988 autoreload 5969 139225156726912 Watching for file changes with StatReloader
+INFO 2025-09-14 10:03:30,450 autoreload 5969 139225156726912 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-14 10:03:30,864 autoreload 5984 132659847528576 Watching for file changes with StatReloader
+INFO 2025-09-14 10:03:34,324 autoreload 5984 132659847528576 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-14 10:03:34,810 autoreload 6013 137282264432768 Watching for file changes with StatReloader
+INFO 2025-09-14 10:07:11,601 autoreload 6013 137282264432768 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-14 10:07:12,140 autoreload 6090 131070752977024 Watching for file changes with StatReloader
+INFO 2025-09-14 10:07:13,672 autoreload 6090 131070752977024 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-14 10:07:14,124 autoreload 6118 130015260557440 Watching for file changes with StatReloader
+INFO 2025-09-14 10:07:34,102 basehttp 6118 130015098304192 "GET /select-service/ HTTP/1.1" 200 18009
+INFO 2025-09-14 10:07:36,562 basehttp 6118 130015098304192 "GET /records/create/rto/?service=qr&price=2&type=RTO HTTP/1.1" 200 14882
+INFO 2025-09-14 10:08:12,834 basehttp 6118 130015098304192 "POST /ajax/create-record/ HTTP/1.1" 200 85
+INFO 2025-09-14 10:08:13,459 basehttp 6118 130015098304192 "GET /records/c0bfe0fa-8d52-4f18-a4f4-cdd32f3abafd/payment/qr_download/ HTTP/1.1" 200 11030
+INFO 2025-09-14 10:08:45,659 basehttp 6118 130015098304192 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+INFO 2025-09-14 10:08:45,703 basehttp 6118 130015098304192 "GET /qr-success/c0bfe0fa-8d52-4f18-a4f4-cdd32f3abafd/ HTTP/1.1" 200 11500
+INFO 2025-09-14 10:08:45,804 basehttp 6118 130015098304192 "GET /media/qr_codes/qr_c0bfe0fa-8d52-4f18-a4f4-cdd32f3abafd.png HTTP/1.1" 200 991
+INFO 2025-09-14 10:09:55,069 autoreload 6118 130015260557440 /home/adithya/Desktop/rto1orginal/core/views.py changed, reloading.
+INFO 2025-09-14 10:09:55,527 autoreload 6375 139977668075648 Watching for file changes with StatReloader
+INFO 2025-09-14 10:11:33,016 autoreload 6495 132743452438656 Watching for file changes with StatReloader
+INFO 2025-09-14 10:11:36,327 basehttp 6495 132743358838464 "GET / HTTP/1.1" 302 0
+INFO 2025-09-14 10:11:36,355 basehttp 6495 132743358838464 "GET /dashboard/ HTTP/1.1" 200 20049
+INFO 2025-09-14 10:11:42,553 basehttp 6495 132743358838464 "GET /select-service/ HTTP/1.1" 200 18009
+INFO 2025-09-14 10:11:44,896 basehttp 6495 132743358838464 "GET /records/create/rto/?service=qr&price=2&type=RTO HTTP/1.1" 200 14882
+INFO 2025-09-14 10:12:18,325 basehttp 6495 132743358838464 "POST /ajax/create-record/ HTTP/1.1" 200 85
+INFO 2025-09-14 10:12:18,617 basehttp 6495 132743358838464 "GET /records/dc41ce15-d5ca-47c0-aa2e-012bee2b0006/payment/qr_download/ HTTP/1.1" 200 11030
+INFO 2025-09-14 10:13:00,631 basehttp 6495 132743358838464 "POST /ajax/verify-payment/ HTTP/1.1" 200 86
+INFO 2025-09-14 10:13:00,682 basehttp 6495 132743358838464 "GET /qr-success/dc41ce15-d5ca-47c0-aa2e-012bee2b0006/ HTTP/1.1" 200 11500
+INFO 2025-09-14 10:13:00,783 basehttp 6495 132743358838464 "GET /media/qr_codes/qr_dc41ce15-d5ca-47c0-aa2e-012bee2b0006.png HTTP/1.1" 200 959

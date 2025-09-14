@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Order Details - {{ order.order_id }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h2>Order Details</h2>
+    <div class="card p-4 shadow-sm">
+        <p><strong>Order ID:</strong> {{ order.order_id }}</p>
+        <p><strong>Service Type:</strong> 
+            {% if order.order_type == 'pvc_card' %}PVC Card
+            {% elif order.order_type == 'nfc_card' %}NFC Card
+            {% else %}QR Code{% endif %}
+        </p>
+        <p><strong>Payment Status:</strong> {{ order.payment_status|capfirst }}</p>
+
+        <p><strong>Delivery Timeline:</strong> 
+            {% if order.order_type == 'pvc_card' %}Within 7 working days
+            {% elif order.order_type == 'nfc_card' %}Within 4-5 working days
+            {% else %}Instant digital delivery{% endif %}
+        </p>
+
+        <h4>Linked RTO Record</h4>
+        <p><strong>Name:</strong> {{ order.rto_record.name }}</p>
+        <p><strong>Contact No.:</strong> {{ order.rto_record.contact_no }}</p>
+        <p><strong>Address:</strong> {{ order.rto_record.address }}</p>
+
+        {% if order.rto_record.qr_code_image %}
+        <div>
+            <h5>Your QR Code</h5>
+            <img src="{{ order.rto_record.qr_code_image.url }}" alt="QR Code">
+        </div>
+        {% endif %}
+        
+        <a href="{% url 'core:dashboard' %}" class="btn btn-secondary mt-4">Back to Dashboard</a>
+    </div>
+</div>
+{% endblock %}
