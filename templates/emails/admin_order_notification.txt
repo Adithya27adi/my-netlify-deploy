@@ -13,11 +13,11 @@ QR Code URL: {{ qr_code_url }}
 Action Required:
 Please prepare the {{ service_name }} with the QR code and ship to the delivery address above.
 
-{% if order_type == 'pvc' %}
+{% comment %} {% if order_type == 'pvc' %}
 Service: Physical PVC Card (₹100)
 {% else %}
 Service: NFC Enabled Card (₹400)
-{% endif %}
+{% endif %} {% endcomment %}
 
 ---
 RTO Management System
