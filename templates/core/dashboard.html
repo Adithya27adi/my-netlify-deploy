@@ -3,33 +3,32 @@
 {% block title %}Dashboard - Digital Record Management{% endblock %}
 
 {% block content %}
-<div class="container-fluid py-4">
+<div class="backdrop"></div>
+<div class="noise"></div>
+
+<div class="container-fluid py-4" style="min-height:100vh;">
     <!-- Welcome Section -->
     <div class="row mb-4">
         <div class="col-12">
-            <div class="card bg-gradient-primary text-white border-0 shadow-lg">
+            <div class="card bg-gradient-primary text-white border-0 shadow-lg" style="background:linear-gradient(135deg,var(--brand,#5b7bff) 20%,var(--brand-2,#8a5bff) 90%); border-radius:1rem;">
                 <div class="card-body p-4">
                     <div class="row align-items-center">
                         <div class="col-md-8">
-                            <h2 class="fw-bold mb-2">Welcome back, {{ user.first_name|default:user.email }}!</h2>
-                            <p class="mb-0 opacity-75">Manage your Documents securely and efficiently</p>
+                            <h2 class="fw-bold mb-2" style="color:var(--text,#eaf0ff);">Welcome back, {{ user.first_name|default:user.email }}!</h2>
+                            <p class="mb-0 opacity-75" style="color:var(--muted,#bfc6ff);">Manage your Documents securely and efficiently</p>
                         </div>
                         <div class="col-md-4 text-end d-none d-md-block">
                             <div class="dropdown">
-                                <!-- <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                    <i class="fas fa-user me-1"></i>Account
-                                </button> -->
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{% url 'core:profile' %}">
+                                <ul class="dropdown-menu" style="background:var(--bg-2,#161b22); color:var(--text,#eaf0ff);">
+                                    <li><a class="dropdown-item text-light" href="{% url 'core:profile' %}">
                                         <i class="fas fa-user me-2"></i>Profile</a></li>
-                                    <li><a class="dropdown-item" href="{% url 'core:orders' %}">
+                                    <li><a class="dropdown-item text-light" href="{% url 'core:orders' %}">
                                         <i class="fas fa-shopping-cart me-2"></i>Orders</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <!-- ONLY USE THIS LOGOUT CODE -->
+                                    <li><hr class="dropdown-divider bg-secondary"></li>
                                     <li>
                                     <form method="post" action="{% url 'authentication:logout' %}" style="display:inline;">
                                     {% csrf_token %}
-                                    <button type="submit" class="btn btn-link dropdown-item border-0 bg-transparent text-start w-100 text-decoration-none">
+                                    <button type="submit" class="btn btn-link dropdown-item border-0 bg-transparent text-start w-100 text-light text-decoration-none">
                                     <i class="fas fa-sign-out-alt me-2"></i>Logout
                                     </button>
                                     </form>
@@ -46,36 +45,36 @@
     <!-- Quick Actions -->
     <div class="row mb-4">
         <div class="col-12">
-            <div class="card border-0 shadow-sm">
-                <div class="card-header bg-white border-0 py-3">
+            <div class="card shadow-sm border-0 glass-card" style="background:var(--bg-2,#161b22); color:var(--text,#eaf0ff); border-radius:1rem;">
+                <div class="card-header" style="background:var(--bg-1,#0d1117); border-radius:1rem 1rem 0 0; color:var(--brand,#5b7bff); border:none;">
                     <h5 class="fw-bold mb-0">Create New Record</h5>
                 </div>
                 <div class="card-body">
                     <div class="row g-3">
                         <div class="col-md-4">
-                            <a href="{% url 'core:select_service' %}" class="card border-2 border-primary border-opacity-25 text-decoration-none quick-action-card">
+                            <a href="{% url 'core:select_service' %}" class="card quick-action-card border-0 text-decoration-none" style="background:var(--bg-3,#1f2937); color:var(--brand,#5b7bff);border-radius:1rem;">
                                 <div class="card-body text-center p-4">
                                     <i class="fas fa-car text-primary fa-3x mb-3"></i>
                                     <h6 class="fw-bold">RTO Record</h6>
-                                    <p class="text-muted small mb-0">RC, Insurance, PU Check, Driving License</p>
+                                    <p class="small mb-0" style="color:var(--muted,#bfc6ff);">RC, Insurance, PU Check, Driving License</p>
                                 </div>
                             </a>
                         </div>
                         <div class="col-md-4">
-                            <a href="{% url 'core:select_service' %}" class="card border-2 border-success border-opacity-25 text-decoration-none quick-action-card">
+                            <a href="{% url 'core:select_service' %}" class="card quick-action-card border-0 text-decoration-none" style="background:var(--bg-3,#1f2937); color:#5af598;border-radius:1rem;">
                                 <div class="card-body text-center p-4">
                                     <i class="fas fa-graduation-cap text-success fa-3x mb-3"></i>
                                     <h6 class="fw-bold">School Record</h6>
-                                    <p class="text-muted small mb-0">Marks Card, Photo, Convocation, Migration</p>
+                                    <p class="small mb-0" style="color:var(--muted,#bfc6ff);">Marks Card, Photo, Convocation, Migration</p>
                                 </div>
                             </a>
                         </div>
                         <div class="col-md-4">
-                            <a href="{% url 'core:select_service' %}" class="card border-2 border-warning border-opacity-25 text-decoration-none quick-action-card">
+                            <a href="{% url 'core:select_service' %}" class="card quick-action-card border-0 text-decoration-none" style="background:var(--bg-3,#1f2937); color:#ffe366;border-radius:1rem;">
                                 <div class="card-body text-center p-4">
                                     <i class="fas fa-folder text-warning fa-3x mb-3"></i>
                                     <h6 class="fw-bold">Other Documents</h6>
-                                    <p class="text-muted small mb-0">Upload any kind of documents</p>
+                                    <p class="small mb-0" style="color:var(--muted,#bfc6ff);">Upload any kind of documents</p>
                                 </div>
                             </a>
                         </div>
@@ -85,86 +84,103 @@
         </div>
     </div>
 
- <div class="container-fluid px-0">
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <div class="card border-0 shadow-sm mb-4">
-        <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center flex-wrap">
-          <h5 class="fw-bold mb-0 d-flex align-items-center">
-            <i class="fas fa-qrcode me-2 text-primary"></i>QR Codes Created
-          </h5>
-          <!-- Modern Filter using Bootstrap input group and select -->
-          <form method="get" class="d-flex align-items-center gap-2 my-2 my-md-0">
-            <label for="sortSelect" class="visually-hidden">Sort By</label>
-            <select id="sortSelect" name="sort" class="form-select form-select-sm" aria-label="Sort Records">
-              <option value="recent" {% if sort == "recent" %}selected{% endif %}>Most Recent</option>
-              <option value="oldest" {% if sort == "oldest" %}selected{% endif %}>Oldest First</option>
-              <option value="name" {% if sort == "name" %}selected{% endif %}>Name (A-Z)</option>
-              <option value="date" {% if sort == "date" %}selected{% endif %}>Date</option>
-            </select>
-            <button type="submit" class="btn btn-outline-primary btn-sm" aria-label="Apply Sort Filter">
-              <i class="fas fa-filter"></i>
-            </button>
-          </form>
-        </div>
-
-        <div class="card-body p-0">
-          {% with qr_records=user_records|dictsortreversed:"created_at" %}
-            {% if qr_records %}
-              <div class="table-responsive px-3">
-                <table class="table table-hover align-middle mb-0">
-                  <thead class="bg-light">
-                    <tr>
-                      <th>Name</th>
-                      <th>Created</th>
-                      <th class="text-center">QR Code</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {% for record in qr_records|slice:":5" %}
-                      {% if record.qr_code_image %}
+    <!-- QR Codes Section -->
+    <div class="container-fluid px-0">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div class="card shadow-sm border-0 glass-card mb-4" style="background:var(--bg-2,#161b22); color:var(--text,#eaf0ff); border-radius:1rem;">
+            <div class="card-header d-flex justify-content-between align-items-center flex-wrap" style="background:var(--bg-1,#0d1117); color:var(--brand,#5b7bff); border-radius:1rem 1rem 0 0; border:none;">
+              <h5 class="fw-bold mb-0 d-flex align-items-center">
+                <i class="fas fa-qrcode me-2" style="color:var(--brand,#5b7bff);"></i>QR Codes Created
+              </h5>
+              <form method="get" class="d-flex align-items-center gap-2 my-2 my-md-0">
+                <label for="sortSelect" class="visually-hidden">Sort By</label>
+                <select id="sortSelect" name="sort" class="form-select form-select-sm" aria-label="Sort Records"
+                  style="background:var(--bg-3,#1f2937); color:var(--muted,#bfc6ff); border:none;">
+                  <option value="recent" {% if sort == "recent" %}selected{% endif %}>Most Recent</option>
+                  <option value="oldest" {% if sort == "oldest" %}selected{% endif %}>Oldest First</option>
+                  <option value="name" {% if sort == "name" %}selected{% endif %}>Name (A-Z)</option>
+                  <option value="date" {% if sort == "date" %}selected{% endif %}>Date</option>
+                </select>
+                <button type="submit" class="btn btn-outline-primary btn-sm" aria-label="Apply Sort Filter"
+                  style="border-color:var(--brand,#5b7bff); color:var(--brand,#5b7bff);">
+                  <i class="fas fa-filter"></i>
+                </button>
+              </form>
+            </div>
+            <div class="card-body p-0">
+              {% with qr_records=user_records|dictsortreversed:"created_at" %}
+                {% if qr_records %}
+                  <div class="table-responsive px-3">
+                    <table class="table table-dark-theme align-middle mb-0" style="border-radius:.8rem;overflow:hidden;">
+                      <thead>
                         <tr>
-                          <td>
-                            <div class="d-flex align-items-center">
-                              <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 36px; height: 36px;">
-                                <i class="fas fa-user text-primary"></i>
-                              </div>
-                              <span class="fw-semibold fs-6">{{ record.name }}</span>
-                            </div>
-                          </td>
-                          <td>
-                            <span class="badge bg-light text-dark fs-7">{{ record.created_at|date:"M d, Y" }}</span>
-                          </td>
-                          <td class="text-center">
-                            <a href="{{ record.qr_code_image.url }}" target="_blank"
-                               class="btn btn-success btn-sm rounded-pill py-1 px-3" title="View QR Code">
-                              <i class="fas fa-qrcode me-1"></i>View
-                            </a>
-                          </td>
+                          <th>Name</th>
+                          <th>Created</th>
+                          <th class="text-center">QR Code</th>
+                          <th class="text-center">Download</th>
                         </tr>
-                      {% endif %}
-                    {% empty %}
-                      <tr>
-                        <td colspan="3" class="text-center text-muted py-5">
-                          <i class="fas fa-qrcode fa-4x mb-3"></i>
-                          <div class="fs-5">No QR codes have been created yet.</div>
-                          <small class="text-muted">Generate QR for your RTO record to display it here.</small>
-                        </td>
-                      </tr>
-                    {% endfor %}
-                  </tbody>
-                </table>
-              </div>
-
-              
-            {% else %}
-              <div class="text-center py-5 px-3">
-                <i class="fas fa-qrcode text-muted fa-4x mb-3"></i>
-                <h5 class="text-muted">No QR codes generated yet</h5>
-                <p class="text-muted">Generate QR for your RTO record to display it here.</p>
-              </div>
-            {% endif %}
-          {% endwith %}
+                      </thead>
+                      <tbody>
+                        {% for record in qr_records|slice:":5" %}
+                          {% if record.qr_code_image %}
+                            <tr>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                  <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width:36px; height:36px;">
+                                    <i class="fas fa-user text-primary"></i>
+                                  </div>
+                                  <span class="fw-semibold fs-6">{{ record.name }}</span>
+                                </div>
+                              </td>
+                              <td>
+                                <span class="badge" style="background:rgba(91,123,255,.17); color:var(--brand,#5b7bff); border-radius:8px; font-size:0.97em;">
+                                  {{ record.created_at|date:"M d, Y" }}
+                                </span>
+                              </td>
+                              <td class="text-center">
+                                <a href="{{ record.qr_code_image.url }}" target="_blank"
+                                  class="btn btn-success btn-sm rounded-pill py-1 px-3" title="View QR Code"
+                                  style="background:var(--brand,#5b7bff); font-weight:700; border:none;">
+                                  <i class="fas fa-qrcode me-1"></i>View
+                                </a>
+                              </td>
+                              <td class="text-center">
+                                <a href="{{ record.qr_code_image.url }}" download="{{ record.name }}_qrcode.png"
+                                  class="btn btn-primary btn-sm rounded-pill py-1 px-3" title="Download QR Code"
+                                  style="background:var(--brand-2,#8a5bff); font-weight:700; border:none;">
+                                  <i class="fas fa-download me-1"></i>Download
+                                </a>
+                              </td>
+                            </tr>
+                          {% endif %}
+                        {% empty %}
+                          <tr>
+                            <td colspan="4" class="text-center text-muted py-5" style="color:var(--muted,#bfc6ff);">
+                              <i class="fas fa-qrcode fa-4x mb-3"></i>
+                              <div class="fs-5">No QR codes have been created yet.</div>
+                              <small class="text-muted">Generate QR for your RTO record to display it here.</small>
+                            </td>
+                          </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                {% else %}
+                  <div class="text-center py-5 px-3" style="color:var(--muted,#bfc6ff);">
+                    <i class="fas fa-qrcode text-muted fa-4x mb-3"></i>
+                    <h5>No QR codes generated yet</h5>
+                    <p>Generate QR for your RTO record to display it here.</p>
+                  </div>
+                {% endif %}
+              {% endwith %}
+            </div>
+          </div>
+          <footer class="footer py-3 mt-auto text-center" style="background: rgba(12,12,24,0.75); border-top: 1px solid rgba(255,255,255,0.08); color: var(--muted,#bfc6ff); font-size: 0.9rem;">
+    <div class="container">
+        <span>📋 RTO Record Management</span> &nbsp; | &nbsp; © {{ now|date:"Y" }} Your Company Name. All rights reserved.
+    </div>
+</footer>
         </div>
       </div>
     </div>
@@ -172,69 +188,127 @@
 </div>
 
 <style>
-    .bg-gradient-primary {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
-    
-    .quick-action-card {
-        transition: all 0.3s ease;
-    }
-    
-    .quick-action-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    
-    .table-hover tbody tr:hover {
-        background-color: rgba(102, 126, 234, 0.05);
-    }
-
-    .order-cards-container {
-        display: flex;
-        flex-direction: column;
-        max-height: 600px;
-        overflow-y: auto;
-    }
-
-    .order-card {
-        background: #fff;
-        transition: box-shadow 0.3s ease;
-        border-color: #ddd;
-    }
-
-    .order-card:hover {
-        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    }
-
-    .order-card h4 {
-        color: #007bff;
-        margin-bottom: 0.5rem;
-    }
-
-    .order-card p {
-        margin-bottom: 0.4rem;
-        color: #555;
-    }
-
-    .btn-sm {
-        font-size: 0.85rem;
-        padding: 0.25em 0.6em;
-    }
+:root {
+  --bg-1: #0d1117;
+  --bg-2: #161b22;
+  --bg-3: #1f2937;
+  --brand: #5b7bff;
+  --brand-2: #8a5bff;
+  --text: #eaf0ff;
+  --muted: #bfc6ff;
+  --card-bg: rgba(255,255,255,.18);
+  --glass-br: 18px;
+}
+html, body {height:100%;background:var(--bg-2);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial;}
+.backdrop{
+  position:fixed;inset:0;z-index:-2;background:
+    radial-gradient(1200px 800px at 15% 10%,rgba(255,255,255,.06),transparent 60%),
+    radial-gradient(1200px 900px at 85% 20%,rgba(255,255,255,.05),transparent 55%),
+    linear-gradient(180deg,var(--bg-1) 0%,var(--bg-2) 45%,var(--bg-3) 100%);
+}
+.noise{position:fixed;inset:0;z-index:-1;opacity:.07;background-image:url('https://grainy-gradients.vercel.app/noise.svg');mix-blend-mode:overlay;pointer-events:none;}
+.nav-bar, .nav-glass {/* to make navbar glassy */
+  background:transparent;
+  backdrop-filter:saturate(160%) blur(0px);
+  transition:all .25s;
+  border:none;
+}
+.nav-glass.scrolled {
+  background:rgba(18,16,39,.55)!important;
+  backdrop-filter:saturate(160%) blur(10px)!important;
+  box-shadow:0 6px 24px rgba(0,0,0,.22)!important;
+}
+.navbar-brand {font-weight:800; letter-spacing:.3px;}
+.nav-link {color:var(--muted)!important; font-weight:600;}
+.nav-link:hover{color:#fff!important;}
+.glass-card {
+  background:var(--card-bg,rgba(255,255,255,.18));
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:var(--glass-br,18px);
+  box-shadow:0 12px 40px rgba(0,0,0,.24);
+  transition:transform .18s,box-shadow .18s;
+}
+.glass-card:hover {
+  transform:translateY(-3px);
+  box-shadow:0 22px 70px rgba(0,0,0,.32);
+}
+.quick-action-card {transition:all .3s;border-radius:1rem;border:none;}
+.quick-action-card:hover {box-shadow:0 10px 26px var(--brand);}
+.table-dark-theme {
+  background:var(--bg-2);
+  color:var(--text);
+  border-radius:.8rem;
+  overflow:hidden;
+  margin-bottom:0;
+}
+.table-dark-theme thead {
+  background:var(--bg-3);
+  color:var(--brand);
+  border:none;
+}
+.table-dark-theme th,.table-dark-theme td {
+  color:var(--text)!important;
+  background:var(--bg-2)!important;
+  border-color:rgba(91,123,255,0.10);
+  font-size:1rem;
+}
+.table-dark-theme tr {background:var(--bg-2)!important;transition:background .18s;}
+.table-dark-theme tbody tr:hover {background:rgba(91,123,255,.14)!important;}
+.table-dark-theme tbody tr:nth-child(even) {background:rgba(28,33,49,0.96)!important;}
+.table-dark-theme tbody tr:nth-child(odd){background:rgba(22,27,34,1)!important;}
+.table-dark-theme .badge {
+  background:rgba(91,123,255,0.17);
+  color:var(--brand);
+  font-weight:600;
+  border-radius:8px;
+}
+.table-dark-theme .btn-success,.table-dark-theme .btn-primary {
+  font-weight:700;
+  color:#fff;
+  border:none;
+}
+.table-dark-theme .btn-success {
+  background:var(--brand);
+  transition:background .22s;
+}
+.table-dark-theme .btn-success:hover {
+  background:var(--brand-2);
+}
+.table-dark-theme .btn-primary {
+  background:var(--brand-2);
+  transition:background .22s;
+}
+.table-dark-theme .btn-primary:hover {
+  background:var(--brand);
+}
+.card-header, .card-body, .card {border-radius:1rem;background:none;border:none;}
+html, body {overflow:hidden;}
+.container-fluid {overflow-y:auto; height:93vh;}
+@media (max-width:991px){
+  .container-fluid{height:100vh;min-height:100vh;padding-bottom:2.1rem;}
+  .glass-card,.card{padding:10px;}
+  th,td{font-size:.97em;}
+}
 </style>
 
 <script>
-    // Add smooth animations
-    document.addEventListener('DOMContentLoaded', function() {
-        const cards = document.querySelectorAll('.card');
-        cards.forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            setTimeout(() => {
-                card.style.transition = 'all 0.5s ease';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, index * 100);
-        });
+document.addEventListener('DOMContentLoaded', function() {
+  const navbar = document.querySelector('.nav-glass');
+  if (navbar) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 18) {navbar.classList.add('scrolled');}
+      else {navbar.classList.remove('scrolled');}
     });
+  }
+  document.querySelectorAll('.card').forEach((card, i) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    setTimeout(() => {
+      card.style.transition = 'all 0.4s';
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }, i * 130);
+  });
+});
 </script>
 {% endblock %}

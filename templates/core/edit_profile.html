@@ -3,6 +3,73 @@
 {% block title %}Edit Profile - RTO Management{% endblock %}
 
 {% block content %}
+<style>
+:root {
+  --bg-dark: #0d1117;
+  --bg-card: #161b22;
+  --bg-input: #1f2937;
+  --text-light: #eaf0ff;
+  --text-muted: #9baacf;
+  --brand1: #5b7bff;
+  --brand2: #8a5bff;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.card-header {
+  background: transparent;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  color: var(--brand1);
+}
+
+label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.form-control {
+  background: var(--bg-input);
+  border: 1px solid rgba(255,255,255,.1);
+  color: var(--text-light);
+}
+
+.form-control:focus {
+  background: var(--bg-input);
+  border-color: var(--brand1);
+  box-shadow: none;
+  color: var(--text-light);
+}
+
+input[readonly] {
+  background: rgba(255,255,255,.05);
+  color: var(--text-muted);
+}
+
+.btn-primary {
+  background: var(--brand1);
+  border: none;
+}
+.btn-primary:hover {
+  background: var(--brand2);
+}
+.btn-outline-secondary {
+  border-color: var(--text-muted);
+  color: var(--text-light);
+}
+.btn-outline-secondary:hover {
+  background: var(--text-muted);
+  color: var(--bg-dark);
+}
+</style>
 
 <!-- Display Django messages -->
 {% if messages %}
@@ -18,10 +85,10 @@
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-lg-8">
-            <div class="card border-0 shadow-sm">
-                <div class="card-header bg-white border-0 py-3">
+            <div class="card shadow-sm">
+                <div class="card-header py-3">
                     <h5 class="fw-bold mb-0">
-                        <i class="fas fa-edit text-primary me-2"></i>Edit Profile
+                        <i class="fas fa-edit me-2"></i>Edit Profile
                     </h5>
                 </div>
                 <div class="card-body">
@@ -45,23 +112,23 @@
                         <!-- Profile Fields -->
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label class="text-muted small">First Name</label>
+                                <label>First Name</label>
                                 <input type="text" name="first_name" class="form-control" value="{{ user.first_name|default:'' }}" placeholder="First Name">
                             </div>
                             <div class="col-md-6">
-                                <label class="text-muted small">Email Address</label>
+                                <label>Email Address</label>
                                 <input type="email" name="email" class="form-control" value="{{ user.email }}" readonly>
                             </div>
                             <div class="col-md-6">
-                                <label class="text-muted small">Phone Number</label>
+                                <label>Phone Number</label>
                                 <input type="text" name="phone" class="form-control" value="{{ profile.phone|default:'' }}" placeholder="Phone Number">
                             </div>
                             <div class="col-md-6">
-                                <label class="text-muted small">Date Joined</label>
+                                <label>Date Joined</label>
                                 <input type="text" class="form-control" value="{{ user.date_joined|date:"F d, Y" }}" readonly>
                             </div>
                             <div class="col-12">
-                                <label class="text-muted small">Address</label>
+                                <label>Address</label>
                                 <input type="text" name="address" class="form-control" value="{{ profile.address|default:'' }}" placeholder="Your Full Address">
                             </div>
                         </div>

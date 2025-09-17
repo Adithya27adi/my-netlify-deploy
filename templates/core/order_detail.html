@@ -1,38 +1,100 @@
 {% extends 'base.html' %}
-
 {% block title %}Order Details - {{ order.order_id }}{% endblock %}
 
 {% block content %}
-<div class="container py-5">
+<style>
+:root {
+  --brand1:#5b7bff;
+  --brand2:#8a5bff;
+  --success:#2ecc71;
+  --danger:#ff4757;
+  --warning:#f39c12;
+  --bg:#0d1117;
+  --bg2:#161b22;
+  --glass:rgba(30,30,30,0.85); /* DARKER, MORE CONTRAST */
+  --text:#eaf0ff;
+  --muted:#9baacf;
+  --radius:18px;
+  --shadow:0 12px 40px rgba(0,0,0,.35);
+}
+body{background:var(--bg); color:var(--text); font-family:'Inter',sans-serif;}
+.container{max-width:1100px; margin:0 auto; padding:30px;}
+h2{font-weight:800; font-size:2.2rem; margin-bottom:30px; background:linear-gradient(135deg,var(--brand1),var(--brand2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; text-align:center;}
+.card{background:var(--glass); border-radius:var(--radius); padding:30px; box-shadow:var(--shadow); backdrop-filter:blur(12px);}
+.card p, .card h4, .card h5, .card strong, .card span, .detail-row {color:var(--text) !important; opacity:1;}
+.detail-row{display:flex; align-items:center; gap:12px; margin-bottom:18px; font-size:1.05rem;}
+.detail-row i{color:var(--brand1); font-size:1.2rem;}
+.badge{padding:6px 12px; border-radius:8px; font-weight:600; font-size:.9rem;}
+.badge-success{background:var(--success); color:#fff;}
+.badge-pending{background:var(--warning); color:#fff;}
+.badge-failed{background:var(--danger); color:#fff;}
+.section-title{margin-top:28px; margin-bottom:16px; font-size:1.3rem; font-weight:700; color:var(--brand1);}
+.qr-card{background:var(--glass); border-radius:var(--radius); padding:20px; text-align:center; margin-top:20px;}
+.qr-card img{max-width:200px; width:100%; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,.4);}
+.btn-back{display:inline-block; margin-top:30px; background:linear-gradient(135deg,var(--brand1),var(--brand2)); color:#fff; padding:12px 28px; border-radius:30px; font-weight:600; text-decoration:none; transition:all .25s;}
+.btn-back:hover{opacity:.9; transform:translateY(-2px);}
+@media(max-width:600px){
+  .card{padding:20px;}
+  .detail-row{font-size:.95rem;}
+}
+</style>
+
+<div class="container">
     <h2>Order Details</h2>
-    <div class="card p-4 shadow-sm">
-        <p><strong>Order ID:</strong> {{ order.order_id }}</p>
-        <p><strong>Service Type:</strong> 
-            {% if order.order_type == 'pvc_card' %}PVC Card
-            {% elif order.order_type == 'nfc_card' %}NFC Card
-            {% else %}QR Code{% endif %}
-        </p>
-        <p><strong>Payment Status:</strong> {{ order.payment_status|capfirst }}</p>
+    <div class="card">
+        <div class="detail-row">
+            <i class="fas fa-receipt"></i>
+            <span><strong>Order ID:</strong> {{ order.order_id }}</span>
+        </div>
+        <div class="detail-row">
+            <i class="fas fa-cogs"></i>
+            <span><strong>Service Type:</strong> 
+                {% if order.order_type == 'pvc_card' %}PVC Card
+                {% elif order.order_type == 'nfc_card' %}NFC Card
+                {% else %}QR Code{% endif %}
+            </span>
+        </div>
+        <div class="detail-row">
+            <i class="fas fa-credit-card"></i>
+            <span><strong>Payment Status:</strong>
+                    <span class="badge badge-success">Paid</span>
+            </span>
+        </div>
+        <div class="detail-row">
+            <i class="fas fa-truck"></i>
+            <span><strong>Delivery Timeline:</strong> 
+                {% if order.order_type == 'pvc_card' %}Within 7 working days
+                {% elif order.order_type == 'nfc_card' %}Within 4-5 working days
+                {% else %}Instant digital delivery{% endif %}
+            </span>
+        </div>
 
-        <p><strong>Delivery Timeline:</strong> 
-            {% if order.order_type == 'pvc_card' %}Within 7 working days
-            {% elif order.order_type == 'nfc_card' %}Within 4-5 working days
-            {% else %}Instant digital delivery{% endif %}
-        </p>
-
-        <h4>Linked RTO Record</h4>
-        <p><strong>Name:</strong> {{ order.rto_record.name }}</p>
-        <p><strong>Contact No.:</strong> {{ order.rto_record.contact_no }}</p>
-        <p><strong>Address:</strong> {{ order.rto_record.address }}</p>
+        <h3 class="section-title"><i class="fas fa-id-card"></i> Linked RTO Record</h3>
+        <div class="detail-row">
+            <i class="fas fa-user"></i>
+            <span><strong>Name:</strong> {{ order.rto_record.name }}</span>
+        </div>
+        <div class="detail-row">
+            <i class="fas fa-phone-alt"></i>
+            <span><strong>Contact No.:</strong> {{ order.rto_record.contact_no }}</span>
+        </div>
+        <div class="detail-row">
+            <i class="fas fa-map-marker-alt"></i>
+            <span><strong>Address:</strong> {{ order.rto_record.address }}</span>
+        </div>
 
         {% if order.rto_record.qr_code_image %}
-        <div>
-            <h5>Your QR Code</h5>
+        <div class="qr-card">
+            <h4 style="margin-bottom:15px; font-weight:700; color:var(--brand1);">
+                <i class="fas fa-qrcode"></i> Your QR Code
+            </h4>
             <img src="{{ order.rto_record.qr_code_image.url }}" alt="QR Code">
         </div>
         {% endif %}
-        
-        <a href="{% url 'core:dashboard' %}" class="btn btn-secondary mt-4">Back to Dashboard</a>
+
+        <div style="text-align:center;">
+            <a href="{% url 'core:dashboard' %}" class="btn-back"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+        </div>
     </div>
 </div>
 {% endblock %}

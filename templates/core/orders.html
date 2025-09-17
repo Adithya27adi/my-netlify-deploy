@@ -35,15 +35,6 @@
                     <ul class="list-unstyled mb-0">
                         <li class="mb-2"><strong>Order:</strong>
                              <span class="badge bg-success">Recived</span>
-                            <!-- {% if order.payment_status == 'pending' %}
-                                <span class="badge bg-warning text-dark">Submitted</span>
-                            {% elif order.payment_status == 'completed' %}
-                               
-                            {% elif order.payment_status == 'failed' %}
-                                <span class="badge bg-danger">Failed</span>
-                            {% else %}
-                                <span class="badge bg-secondary">{{ order.payment_status|capfirst }}</span>
-                            {% endif %} -->
                         </li>
                         <li class="mb-2"><strong>Delivery:</strong>
                             {% if order.order_type == 'pvc_card' %}
