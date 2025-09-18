@@ -1,7 +1,7 @@
 from .base import *
 
 # Override only the essential production settings
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'my-netlify-deploy-10.onrender.com']
 
 
